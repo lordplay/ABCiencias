@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ABCiencias.Migrations
 {
-    public partial class StartMigration : Migration
+    public partial class RESET : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,6 +27,7 @@ namespace ABCiencias.Migrations
                 {
                     IdFornecedor = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
                     RazaoSocial = table.Column<string>(nullable: true),
                     CNPJ = table.Column<string>(nullable: true),
                     Descricao = table.Column<string>(nullable: true)

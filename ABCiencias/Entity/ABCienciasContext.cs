@@ -15,7 +15,7 @@ namespace ABCiencias.Entity
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=db_abciencias;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-B9MSDME\SQLEXPRESS;Initial Catalog=ABCiencias;Integrated Security=True");
         }
     }
 }

@@ -2,9 +2,14 @@
     <thead>
         <tr>
             <th scope="col">Type</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
-            <th scope="col">Column heading</th>
         </tr>
     </thead>
+    <tbody ng-repeat="x in fornecedores">
+        <tr>
+            <td>
+                {{x.RazaoSocial}}
+            </td>
+        </tr>
+    </tbody>
 </table>
+

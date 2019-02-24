@@ -45,6 +45,8 @@ namespace ABCiencias.Migrations
 
                     b.Property<string>("RazaoSocial");
 
+                    b.Property<int>("Status");
+
                     b.HasKey("IdFornecedor");
 
                     b.ToTable("Fornecedor");

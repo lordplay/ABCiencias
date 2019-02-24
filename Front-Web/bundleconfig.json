@@ -1,0 +1,32 @@
+[
+  {
+    "outputFileName": "Content/JS/servicesbundle.js",
+    "inputFiles": [
+      "App/Services/RequestFactory.js",
+      "App/Services/FornecedorService.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/JS/angularcore.js",
+    "inputFiles": [
+      "scripts/angular.js",
+      "scripts/angular-route.js",
+      "scripts/angular-cookies.js",
+      "scripts/angular-ui-router.js",
+      "scripts/angular-animate.js",
+      "scripts/dirPagination.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/JS/mainmodule.js",
+    "inputFiles": [
+      "App/MainModule.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/JS/routeconfig.js",
+    "inputFiles": [
+      "App/RouteProvider/RouteConfig.js"
+    ]
+  }
+]

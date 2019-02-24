@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ABCiencias.Migrations
 {
     [DbContext(typeof(ABCienciasContext))]
-    [Migration("20190219030944_StartMigration")]
-    partial class StartMigration
+    [Migration("20190223194438_RESET")]
+    partial class RESET
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,8 @@ namespace ABCiencias.Migrations
                     b.Property<string>("Descricao");
 
                     b.Property<string>("RazaoSocial");
+
+                    b.Property<int>("Status");
 
                     b.HasKey("IdFornecedor");
 

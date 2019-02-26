@@ -1,0 +1,35 @@
+﻿<div class="col-10 offset-1">
+    <div class="custom-control custom-switch ">
+        <input ng-show="UrlData.Id" type="checkbox" class="custom-control-input dropright" id="customSwitch1" ng-model="UrlData.Status" ng-change="UrlData.Status ? Texto = 'Ativo': Texto = 'Inativo'" ng-checked="UrlData.Status == 1">
+        <label class="custom-control-label" for="customSwitch1">{{Texto}}</label>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <label>
+                Nome
+            </label>
+            <input type="text" ng-model="UrlData.Nome" class="form-control" />
+        </div>
+        <div class="form-group col-6">
+            <label>
+                Redirecionar Para
+            </label>
+            <input type="text" ng-model="UrlData.UrlToRedirect" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-12">
+            <label class="col-form-label">
+                URL Encurtada
+            </label>
+            <input type="text" class="form-control text-center" ng-model="UrlData.Guid " readonly />
+            <button class="btn btn-success col-6 offset-3 mt-5" ng-click="ObterNovaUrl()">Gerar Novo Link</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button class="float-right btn btn-primary col-3 mt-5" ng-click="SalvarEdicao(UrlData)">Salvar</button>
+            <button ui-sref="shortener.listagem" class="float-left btn btn-secondary col-3 mt-5">Voltar</button>
+        </div>
+    </div>
+</div>

@@ -16,7 +16,7 @@ namespace ABCiencias.Models.Servicos.Fornecedores
         }
         public ICollection<Fornecedor> ObterFornecedoresAtivos()
         {
-           return _context.Fornecedores.Where(x => x.Status == EnumStatusFornecedor.Ativo).ToList();
+            return _context.Fornecedores.Where(x => x.Status == EnumStatusFornecedor.Ativo).ToList();
         }
     }
 }

@@ -87,10 +87,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\Controllers\Fornecedores\fornecedoresListagemController.js" />
+    <Content Include="App\Controllers\Shorteners\shortenerCadastrarController.js" />
+    <Content Include="App\Controllers\Shorteners\shortenerController.js" />
+    <Content Include="App\Controllers\Shorteners\shortenerEditController.js" />
     <Content Include="App\MainModule.js" />
     <Content Include="App\RouteProvider\RouteConfig.js" />
     <Content Include="App\Services\FornecedorService.js" />
     <Content Include="App\Services\RequestFactory.js" />
+    <Content Include="App\Services\ShortenerService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\JS\angularcore.js" />
     <Content Include="Content\JS\angularcore.min.js">
@@ -124,6 +128,9 @@
     <Content Include="scripts\dirPagination.tpl.html" />
     <Content Include="Templates\Fornecedores\fornecedores-listagem.html" />
     <Content Include="Index.html" />
+    <Content Include="Templates\Shortener\shorteners-cadastrar.html" />
+    <Content Include="Templates\Shortener\shorteners-edit.html" />
+    <Content Include="Templates\Shortener\shorteners-listagem.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +190,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets'))" />
   </Target>
+  <Import Project="..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

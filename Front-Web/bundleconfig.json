@@ -2,8 +2,7 @@
   {
     "outputFileName": "Content/JS/servicesbundle.js",
     "inputFiles": [
-      "App/Services/RequestFactory.js",
-      "App/Services/FornecedorService.js"
+      "App/Services"
     ]
   },
   {
@@ -27,6 +26,14 @@
     "outputFileName": "Content/JS/routeconfig.js",
     "inputFiles": [
       "App/RouteProvider/RouteConfig.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/JS/Controllers.min.js",
+    "inputFiles": [
+      "App/Controllers/Fornecedores",
+      "App/Controllers/Shorteners"
+
     ]
   }
 ]

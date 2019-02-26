@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-12">
+        <button ui-sref="shortener.cadastrar" class="btn btn-primary float-right mb-3">Novo Link</button>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="row">Nome</th>
+            <th scope="row">Url Encurtada</th>
+            <th scope="row">Redirecionamento</th>
+            <th scope="row">N de clicks</th>
+            <th scope="row">Estado</th>
+            <th scope="row">Functions</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="x in shorteners">
+        <tr>
+            <td>
+                {{x.Nome}}
+            </td>
+            <td>
+                <a href="http://localhost:49379/{{x.Guid}}" target="_blank">{{x.Guid}}</a>
+            </td>
+            <td>
+                {{x.UrlToRedirect | limitTo:30}}
+            </td>
+            <td>
+                {{x.Clicks}}
+            </td>
+            <td>
+                <button ng-click="AlterarStatus(x.Id)" id="btn{{x.Id}}" ng-class="{1 : 'btn-success btn', 0:'btn-danger btn'}[x.Status]">{{StatusLink(x.Status)}}</button>
+            </td>
+            <td>
+                <a ui-sref="shortener.edit({UrlId:{{x.Id}}})" class="btn btn-primary">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

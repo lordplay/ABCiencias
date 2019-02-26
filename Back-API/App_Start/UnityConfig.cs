@@ -1,5 +1,6 @@
 using ABCiencias.Entity;
 using ABCiencias.Models.Servicos.Fornecedores;
+using ABCiencias.Models.Servicos.Shortener;
 using System.Web.Http;
 using Unity;
 using Unity.WebApi;
@@ -17,7 +18,12 @@ namespace Back_API
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IABCienciasContext, ABCienciasContext>();
+            container.RegisterType<IURLShortenerContext, URLShortenerContext>();
+
             container.RegisterType<IFornecedorService, FornecedorService>();
+
+            container.RegisterType<IShortenerService, ShortenerService>();
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

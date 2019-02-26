@@ -21,12 +21,14 @@
     <script src="Content/JS/routeconfig.js"></script>
 
     <!--Controller-->
-    <script src="App/Controllers/Fornecedores/fornecedoresListagemController.js"></script>
-
+    <script src="Content/JS/Controllers.min.js"></script>
 
     <!--Services-->
     <script src="Content/JS/servicesbundle.min.js"></script>
 
+
+    <script src="App/Controllers/Shorteners/shortenerEditController.js"></script>
+    <script src="App/Services/ShortenerService.js"></script>
 </head>
 
 
@@ -52,7 +54,7 @@
                     <a class="nav-link" href="#">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ui-sref="fornecedores.listagem">About</a>
+                    <a class="nav-link" ui-sref="shortener.listagem">Url Shortener</a>
 
                 </li>
                 <li class="nav-item dropdown">
@@ -69,7 +71,12 @@
         </div>
     </nav>
     <div class="content">
-        <ui-view></ui-view>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Home</li>
+        </ol>
+        <div class="m-5">
+            <ui-view></ui-view>
+        </div>
     </div>
 </body>
 

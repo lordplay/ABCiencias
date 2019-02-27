@@ -7,9 +7,12 @@
         .controller('ShortenerEditController', ['$scope', '$stateParams', 'ShortenerService', shortenerEditController]);
 
     function shortenerEditController($scope, $stateParams, ShortenerService) {
+        $scope.UrlData = {};
 
         $scope.ObterNovaUrl = ObterNovaUrl;
         $scope.SalvarEdicao = SalvarEdicao;
+        $scope.AlteraStatus = AlteraStatus;
+
 
         if ($stateParams.UrlId) {
             ObterDadosUrl($stateParams.UrlId);
@@ -18,6 +21,8 @@
         function ObterDadosUrl(id) {
             ShortenerService.ObterDadosUrl(id).then(function (response) {
                 $scope.UrlData = response;
+                $scope.Texto = $scope.UrlData.Status == 1 ? "Ativo" : "Inativo";
+                $scope.checked = $scope.UrlData.Status == 1 ? true : false;
             })
         }
 
@@ -30,5 +35,17 @@
             ShortenerService.SalvarEdicao(objeto).then(function (response) {
             })
         }
+        function AlteraStatus() {
+            if ($scope.UrlData.Status == 1) {
+                $scope.UrlData.Status = 0;
+                $scope.Texto = "Inativo";
+                $('#status').attr('checked', false);
+            } else {
+                $scope.UrlData.Status = 1;
+                $scope.Texto = "Ativo";
+                $('#status').attr('checked', true);
+            }
+        }
+
     }
 })();

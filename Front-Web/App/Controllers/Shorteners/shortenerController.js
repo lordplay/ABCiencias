@@ -11,6 +11,10 @@
         ObterUrls();
         $scope.StatusLink = StatusLink;
         $scope.AlterarStatus = AlterarStatus;
+        $scope.Confirmacao = Confirmacao;
+        $scope.Delete = Delete;
+
+
 
         function ObterUrls() {
             ShortenerService.ObterUrlsAtivas().then(function (response) {
@@ -23,8 +27,19 @@
                 return "Ativo"
             return "Inativo"
         }
-        function AlterarStatus(Id,) {
+        function AlterarStatus(Id, ) {
 
+        }
+        function Confirmacao(id, nome) {
+            $scope.delete = {};
+            $scope.delete.id = id;
+            $scope.delete.nome = nome;
+            $('#modal').modal("show");
+        }
+        function Delete(id) {
+            $('#modal').modal("hide");
+            ShortenerService.Delete(id).then(function (response) {
+            })
         }
 
     }

@@ -14,7 +14,7 @@
 
         //retornar apenas os fornecedores ativos
         function ObterFornecedoresAtivos() {
-            return $http.get(RequestFactory.backapiurl + '/Fornecedor').then(function (response) {
+            return $http.get(RequestFactory.backapiurl + '/Fornecedor/ObterFornecedoresAtivos').then(function (response) {
                 return response.data;
             });
         }

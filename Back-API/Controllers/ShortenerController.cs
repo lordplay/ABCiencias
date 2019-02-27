@@ -48,6 +48,9 @@ namespace Back_API.Controllers
         {
             return _service.AdicionarLink(cadastro);
         }
-
+        public bool DeletarUrl([FromBody] int id)
+        {
+            return _service.Delete(id);
+        }
     }
 }

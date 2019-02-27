@@ -13,7 +13,7 @@
 
         //retornar apenas os fornecedores ativos
         function ObterFornecedoresAtivos() {
-            return $http.get(RequestFactory.backapiurl + '/Fornecedor').then(function (response) {
+            return $http.get(RequestFactory.backapiurl + '/Fornecedor/ObterFornecedoresAtivos').then(function (response) {
                 return response.data;
             });
         }
@@ -60,7 +60,8 @@
             ObterNovaUrl: ObterNovaUrl,
             SalvarEdicao: SalvarEdicao,
             ObterUrlsAtivas: ObterUrlsAtivas,
-            CadastrarUrl: CadastrarUrl
+            CadastrarUrl: CadastrarUrl,
+            Delete: Delete
         };
 
         function ObterUrlsAtivas() {
@@ -89,7 +90,11 @@
                 return response.data;
             });
         }
-
+        function Delete(id) {
+            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Shortener/DeletarUrl', data: id }).then(function (response) {
+                return response.data;
+            });
+        }
         return service;
     }
 })();

@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<table class="table table-hover">
+<table class="table table-hover text-center">
     <thead>
         <tr>
             <th scope="row">Nome</th>
@@ -15,13 +15,13 @@
             <th scope="row">Functions</th>
         </tr>
     </thead>
-    <tbody ng-repeat="x in shorteners">
+    <tbody dir-paginate="x in shorteners | itemsPerPage:10">
         <tr>
             <td>
                 {{x.Nome}}
             </td>
             <td>
-                <a href="http://localhost:49379/{{x.Guid}}" target="_blank">{{x.Guid}}</a>
+                <a href="{{x.Guid}}" target="_blank">{{x.Guid}}</a>
             </td>
             <td>
                 {{x.UrlToRedirect | limitTo:30}}
@@ -30,11 +30,34 @@
                 {{x.Clicks}}
             </td>
             <td>
-                <button ng-click="AlterarStatus(x.Id)" id="btn{{x.Id}}" ng-class="{1 : 'btn-success btn', 0:'btn-danger btn'}[x.Status]">{{StatusLink(x.Status)}}</button>
+                <button ng-click="AlterarStatus(x.Id)" id="btn{{x.Id}}" ng-class="{1 : 'btn-success btn', 0:'btn-warning btn'}[x.Status]">{{StatusLink(x.Status)}}</button>
             </td>
             <td>
                 <a ui-sref="shortener.edit({UrlId:{{x.Id}}})" class="btn btn-primary">Editar</a>
+                <button ng-click="Confirmacao(x.Id, x.Nome)" class="btn btn-danger">Deletar</button>
             </td>
         </tr>
     </tbody>
 </table>
+
+<dir-pagination-controls  template-url="Templates/Utils/dirPagination.html" max-size="8" direction-links="true" boundary-links="true"></dir-pagination-controls>
+
+<div class="modal" id="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tem certeza?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir {{delete.nome}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="Delete(delete.id)" class="btn btn-primary">Sim</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Nao</button>
+            </div>
+        </div>
+    </div>
+</div>

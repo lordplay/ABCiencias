@@ -9,5 +9,6 @@ namespace ABCiencias.Models.Servicos.Shortener
         ICollection<URLShortener> ObterUrlsAtivas();
         URLShortener ObterUrlPorId(int? id);
         string ObterNovaUrl();
+        bool Delete(int id);
     }
 }

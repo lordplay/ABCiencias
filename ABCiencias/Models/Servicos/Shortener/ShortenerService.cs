@@ -16,7 +16,7 @@ namespace ABCiencias.Models.Servicos.Shortener
 
         public ICollection<URLShortener> ObterUrlsAtivas()
         {
-            return _context.Urls.Where(x => x.Status == EnumStatusUrl.Ativa).ToList();
+            return _context.Urls.ToList();
         }
         public int AdicionarLink(URLShortener uRL)
         {
@@ -43,7 +43,7 @@ namespace ABCiencias.Models.Servicos.Shortener
 
         public string ObterNovaUrl()
         {
-            string domain = "http://localhost:49379/";
+            string domain = "http://localhost:62309/";
             var IsValid = false;
             while (!IsValid)
             {
@@ -88,6 +88,17 @@ namespace ABCiencias.Models.Servicos.Shortener
         {
             if (_context.Urls.Where(x => x.Equals(url)).FirstOrDefault() == null)
                 return true;
+            return false;
+        }
+        public bool Delete(int id)
+        {
+            var ToDelete = _context.Urls.Where(x => x.Id == id).FirstOrDefault();
+            if (ToDelete != null)
+            {
+                _context.Urls.Remove(ToDelete);
+                _context.SaveChanges();
+                return true;
+            }
             return false;
         }
 

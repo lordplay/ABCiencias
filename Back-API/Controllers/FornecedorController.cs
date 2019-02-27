@@ -18,9 +18,14 @@ namespace Back_API.Controllers
         {
             _fornecedorService = service;
         }
-        public IHttpActionResult GetObterForncedoresAtivos()
+        [HttpGet]
+        public IHttpActionResult ObterFornecedoresAtivos()
         {
             return Ok(_fornecedorService.ObterFornecedoresAtivos());
+        }
+        public IHttpActionResult CadastrarFornecedor(CadastroFornecedorModel cadastro)
+        {
+            return Ok(_fornecedorService.)
         }
 
     }

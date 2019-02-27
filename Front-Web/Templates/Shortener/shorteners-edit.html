@@ -1,7 +1,7 @@
 ﻿<div class="col-10 offset-1">
-    <div class="custom-control custom-switch ">
-        <input ng-show="UrlData.Id" type="checkbox" class="custom-control-input dropright" id="customSwitch1" ng-model="UrlData.Status" ng-change="UrlData.Status ? Texto = 'Ativo': Texto = 'Inativo'" ng-checked="UrlData.Status == 1">
-        <label class="custom-control-label" for="customSwitch1">{{Texto}}</label>
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input dropright" id="status" ng-model="UrlData.Status" ng-checked="checked" ng-click="AlteraStatus()">
+        <label class="custom-control-label" for="status">{{Texto}}</label>
     </div>
     <div class="row">
         <div class="form-group col-6">

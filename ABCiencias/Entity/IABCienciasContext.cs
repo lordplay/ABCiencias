@@ -9,5 +9,6 @@ namespace ABCiencias.Entity
         DbSet<Fornecedor> Fornecedores { get; set; }
         DbSet<ServicoFornecedor> ServicoFornecedor { get; set; }
         DbSet<Servico> Servicos { get; set; }
+        int SaveChanges();
     }
 }

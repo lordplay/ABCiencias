@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace Back_API.Controllers
+namespace ABCiencias.Controllers
 {
     [EnableCors("*", "*", "*")]
     public class ShortenerController : ApiController

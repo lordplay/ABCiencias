@@ -1,4 +1,5 @@
-﻿using ABCiencias.Models.Servicos.Fornecedores;
+﻿using ABCiencias.Models;
+using ABCiencias.Models.Servicos.Fornecedores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace Back_API.Controllers
+namespace ABCiencias.Controllers
 {
     [EnableCors("*", "*", "*")]
     public class FornecedorController : ApiController
@@ -21,11 +22,16 @@ namespace Back_API.Controllers
         [HttpGet]
         public IHttpActionResult ObterFornecedoresAtivos()
         {
-            return Ok(_fornecedorService.ObterFornecedoresAtivos());
+            return Ok(_fornecedorService.ObterFornecedores());
         }
-        public IHttpActionResult CadastrarFornecedor(CadastroFornecedorModel cadastro)
+        public IHttpActionResult CadastrarFornecedor([FromBody]CadastroFornecedorModel cadastro)
         {
-            return Ok(_fornecedorService.)
+            _fornecedorService.CadastrarFornecedor(cadastro);
+            return Ok();
+        }
+        public IHttpActionResult ObterServicosDisponiveis()
+        {
+            return Ok(_fornecedorService.ObterServicos());
         }
 
     }

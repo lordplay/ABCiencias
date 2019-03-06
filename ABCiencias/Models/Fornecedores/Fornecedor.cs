@@ -13,12 +13,14 @@ namespace ABCiencias.Models
         {
             this.Servicos = new HashSet<ServicoFornecedor>();
         }
+
         [Key]
         public int IdFornecedor { get; set; }
         public EnumStatusFornecedor Status { get; set; }
         public string RazaoSocial { get; set; }
         public string CNPJ { get; set; }
         public string Descricao { get; set; }
-        public ICollection<ServicoFornecedor> Servicos { get; set; }
+        public virtual ICollection<ServicoFornecedor> Servicos { get; set; }
+
     }
 }

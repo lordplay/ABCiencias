@@ -5,7 +5,7 @@ using System.Web.Http;
 using Unity;
 using Unity.WebApi;
 
-namespace Back_API
+namespace ABCiencias
 {
     public static class UnityConfig
     {

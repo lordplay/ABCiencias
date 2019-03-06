@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Back_API
+namespace ABCiencias
 {
     public static class WebApiConfig
     {

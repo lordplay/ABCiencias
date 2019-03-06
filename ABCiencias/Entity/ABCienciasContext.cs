@@ -13,9 +13,20 @@ namespace ABCiencias.Entity
         public DbSet<CategoriaServico> CategoriaServico { get; set; }
         public DbSet<ServicoFornecedor> ServicoFornecedor { get; set; }
 
+        public override int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-B9MSDME\SQLEXPRESS;Initial Catalog=ABCiencias;Integrated Security=True");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }

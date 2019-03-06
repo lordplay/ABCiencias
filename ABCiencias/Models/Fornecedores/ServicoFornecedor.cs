@@ -6,6 +6,7 @@ namespace ABCiencias.Models
     [Table("ServicoFornecedor")]
     public class ServicoFornecedor
     {
+
         [Key]
         public int IdServicoFornecedor { get; set; }
         public int IdFornecedor_fk { get; set; }

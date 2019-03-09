@@ -33,6 +33,9 @@ namespace ABCiencias.Controllers
         {
             return Ok(_fornecedorService.ObterServicos());
         }
-
+        public IHttpActionResult ObterCategorias()
+        {
+            return Ok(_fornecedorService.ObterCategorias());
+        }
     }
 }

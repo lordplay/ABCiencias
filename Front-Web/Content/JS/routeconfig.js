@@ -22,6 +22,10 @@
                     url: "/listagem",
                     templateUrl: 'Templates/Fornecedores/fornecedores-listagem.html',
                     controller: "FornecedoresListagemController"
+                }).state('fornecedores.categorias', {
+                    url: "/categorias",
+                    templateUrl: 'Templates/Fornecedores/fornecedores-categorias.html',
+                    controller: "FornecedoresListagemCategoriasController"
                 });
         }
 

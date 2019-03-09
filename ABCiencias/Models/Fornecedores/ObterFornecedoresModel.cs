@@ -17,7 +17,11 @@ namespace ABCiencias.Models.Fornecedores
 
     public class ServicoFornecedorDTO
     {
-        public int IdServicoFornecedor { get; set; }
-        public Servico Servico { get; set; }
+        public int IdCategoriaServico_fk { get; set; }
+
+        public string ServicoNome { get; set; }
+        public string ServicoDescricao { get; set; }
+
+        public string CategoriaNome { get; set; }
     }
 }

@@ -33,7 +33,6 @@
     "inputFiles": [
       "App/Controllers/Fornecedores",
       "App/Controllers/Shorteners"
-
     ]
   }
 ]

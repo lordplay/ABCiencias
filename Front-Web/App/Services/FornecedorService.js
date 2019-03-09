@@ -9,7 +9,8 @@
     function fornecedorService($http, RequestFactory) {
 
         var service = {
-            ObterFornecedoresAtivos: ObterFornecedoresAtivos
+            ObterFornecedoresAtivos: ObterFornecedoresAtivos,
+            ObterCategorias: ObterCategorias
         };
 
         //retornar apenas os fornecedores ativos
@@ -17,6 +18,12 @@
             return $http.get(RequestFactory.backapiurl + '/Fornecedor/ObterFornecedoresAtivos').then(function (response) {
                 return response.data;
             });
+        }
+
+        function ObterCategorias() {
+            return $http.post(RequestFactory.backapiurl + "/Fornecedor/ObterCategorias").then(function (response) {
+                return response.data;
+            })
         }
 
         return service;

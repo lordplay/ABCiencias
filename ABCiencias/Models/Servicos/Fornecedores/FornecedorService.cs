@@ -26,7 +26,7 @@ namespace ABCiencias.Models.Servicos.Fornecedores
                 CNPJ = x.CNPJ,
                 Descricao = x.Descricao,
                 IdFornecedor = x.IdFornecedor,
-                Servicos = x.Servicos.Select(c => new ServicoFornecedorDTO { IdServicoFornecedor = c.IdServicoFornecedor, Servico = c.Servico }).ToList(),
+                Servicos = x.Servicos.Select(c => new ServicoFornecedorDTO { CategoriaNome = c.Servico.Categoria.Nome, IdCategoriaServico_fk = c.Servico.IdCategoriaServico_fk, ServicoDescricao = c.Servico.Descricao, ServicoNome = c.Servico.Nome }).ToList(),
                 Status = x.Status
             }).ToList();
         }
@@ -59,5 +59,9 @@ namespace ABCiencias.Models.Servicos.Fornecedores
             return _context.Servicos.ToList();
         }
 
+        public List<CategoriaServico> ObterCategorias()
+        {
+            return _context.CategoriaServico.ToList();
+        }
     }
 }

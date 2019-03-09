@@ -86,6 +86,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Controllers\Fornecedores\fornecedoresListagemCategoriasController.js" />
     <Content Include="App\Controllers\Fornecedores\fornecedoresListagemController.js" />
     <Content Include="App\Controllers\Shorteners\shortenerCadastrarController.js" />
     <Content Include="App\Controllers\Shorteners\shortenerController.js" />
@@ -100,6 +101,7 @@
     <Content Include="Content\JS\angularcore.min.js">
       <DependentUpon>angularcore.js</DependentUpon>
     </Content>
+    <Content Include="Content\JS\Controllers.min.js" />
     <Content Include="Content\JS\mainmodule.js" />
     <Content Include="Content\JS\mainmodule.min.js">
       <DependentUpon>mainmodule.js</DependentUpon>
@@ -126,6 +128,7 @@
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\dirPagination.js" />
     <Content Include="scripts\dirPagination.tpl.html" />
+    <Content Include="Templates\Fornecedores\fornecedores-categorias.html" />
     <Content Include="Templates\Fornecedores\fornecedores-listagem.html" />
     <Content Include="Index.html" />
     <Content Include="Templates\Shortener\shorteners-cadastrar.html" />

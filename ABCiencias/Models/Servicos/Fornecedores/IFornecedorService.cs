@@ -8,5 +8,6 @@ namespace ABCiencias.Models.Servicos.Fornecedores
         ICollection<ObterFornecedoresModel> ObterFornecedores();
         void CadastrarFornecedor(CadastroFornecedorModel cadastro);
         List<Servico> ObterServicos();
+        List<CategoriaServico> ObterCategorias();
     }
 }

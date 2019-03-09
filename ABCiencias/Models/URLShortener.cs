@@ -14,7 +14,12 @@ namespace ABCiencias.Models
         public int Clicks { get; set; }
         public EnumStatusUrl Status { get; set; }
         public string Nome { get; set; }
+        public string Domain { get; set; }
 
+        public void Click()
+        {
+            this.Clicks += 1;
+        }
     }
 
 }

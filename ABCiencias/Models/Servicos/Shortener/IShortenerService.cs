@@ -8,7 +8,8 @@ namespace ABCiencias.Models.Servicos.Shortener
         void Update(URLShortener uRL);
         ICollection<URLShortener> ObterUrlsAtivas();
         URLShortener ObterUrlPorId(int? id);
-        string ObterNovaUrl();
+        URLShortener ObterNovaUrl();
         bool Delete(int id);
+        URLShortener ObterUrlToRedirect(string Guid);
     }
 }

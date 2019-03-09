@@ -22,7 +22,7 @@
             <label class="col-form-label">
                 URL Encurtada
             </label>
-            <input type="text" class="form-control text-center" ng-model="UrlData.Guid " readonly />
+            <input type="text" class="form-control text-center" ng-model="[UrlData.Domain]+[UrlData.Guid] " readonly />
             <button class="btn btn-success col-6 offset-3 mt-5" ng-click="ObterNovaUrl()">Gerar Novo Link</button>
         </div>
     </div>

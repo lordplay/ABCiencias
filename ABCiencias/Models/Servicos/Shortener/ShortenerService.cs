@@ -41,27 +41,27 @@ namespace ABCiencias.Models.Servicos.Shortener
             return _context.Urls.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public string ObterNovaUrl()
+        public URLShortener ObterNovaUrl()
         {
-            string domain = "http://localhost:62309/";
             var IsValid = false;
             while (!IsValid)
             {
-                var url = GerarGuid(domain);
-                if (IsValidGuid(url))
+                var Guid = GerarGuid();
+                if (IsValidGuid(Guid))
                 {
                     IsValid = true;
-                    return url;
+                    var retorno = new URLShortener() { Domain = "http://localhost:63649/", Guid = Guid };
+                    return retorno;
                 }
             }
             return null;
         }
 
-        public string GerarGuid(string domain)
+        public string GerarGuid()
         {
             var maxvalue = 8;
             Random r = new Random();
-            var url = domain;
+            var Guid = "";
             List<int> ints = new List<int>();
 
             for (int i = 0; i < maxvalue; i++)
@@ -78,15 +78,15 @@ namespace ABCiencias.Models.Servicos.Shortener
 
             foreach (var numero in ints)
             {
-                url += String.Join(url, Convert.ToChar(numero).ToString());
+                Guid += String.Join(Guid, Convert.ToChar(numero).ToString());
             }
 
-            return url;
+            return Guid;
         }
 
         public bool IsValidGuid(string url)
         {
-            if (_context.Urls.Where(x => x.Equals(url)).FirstOrDefault() == null)
+            if (_context.Urls.Where(x => x.Guid.Equals(url)).FirstOrDefault() == null)
                 return true;
             return false;
         }
@@ -102,5 +102,18 @@ namespace ABCiencias.Models.Servicos.Shortener
             return false;
         }
 
+        public URLShortener ObterUrlToRedirect(string Guid)
+        {
+            var retono = _context.Urls.Where(x => x.Guid == Guid).FirstOrDefault();
+            if (retono != null)
+                Click(ref retono);
+
+            return retono;
+        }
+        public void Click(ref URLShortener uRL)
+        {
+            uRL.Click();
+            _context.SaveChanges();
+        }
     }
 }

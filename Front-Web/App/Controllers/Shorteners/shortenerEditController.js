@@ -29,6 +29,7 @@
         function ObterNovaUrl() {
             ShortenerService.ObterNovaUrl().then(function (response) {
                 $scope.UrlData.Guid = response;
+                $scope.UrlData.Domain = response.Domain;
             })
         }
         function SalvarEdicao(objeto) {

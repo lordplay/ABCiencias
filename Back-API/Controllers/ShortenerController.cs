@@ -32,7 +32,7 @@ namespace ABCiencias.Controllers
         }
 
         [HttpPost]
-        public string ObterNovaUrl()
+        public URLShortener ObterNovaUrl()
         {
             return _service.ObterNovaUrl();
         }

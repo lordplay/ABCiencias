@@ -21,7 +21,7 @@
                 {{x.Nome}}
             </td>
             <td>
-                <a href="{{x.Guid}}" target="_blank">{{x.Guid}}</a>
+                <a href="{{[x.Domain]+[x.Guid]}}" target="_blank">{{[x.Domain]+[x.Guid]}}</a>
             </td>
             <td>
                 {{x.UrlToRedirect | limitTo:30}}

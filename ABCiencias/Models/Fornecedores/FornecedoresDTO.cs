@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ABCiencias.Models.Fornecedores
 {
-    public class ObterFornecedoresModel
+    public class FornecedoresDTO
     {
         public int IdFornecedor { get; set; }
         public EnumStatusFornecedor Status { get; set; }
@@ -13,11 +13,5 @@ namespace ABCiencias.Models.Fornecedores
         public string Descricao { get; set; }
         public virtual ICollection<ServicoFornecedorDTO> Servicos { get; set; }
 
-    }
-
-    public class ServicoFornecedorDTO
-    {
-        public int IdServicoFornecedor { get; set; }
-        public Servico Servico { get; set; }
     }
 }

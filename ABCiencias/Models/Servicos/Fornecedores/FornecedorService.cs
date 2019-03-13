@@ -17,16 +17,16 @@ namespace ABCiencias.Models.Servicos.Fornecedores
         {
             _context = context;
         }
-        public ICollection<ObterFornecedoresModel> ObterFornecedores()
+        public ICollection<FornecedoresDTO> ObterFornecedores()
         {
             return _context.Fornecedores.Select(x => new
-            ObterFornecedoresModel
+            FornecedoresDTO
             {
                 RazaoSocial = x.RazaoSocial,
                 CNPJ = x.CNPJ,
                 Descricao = x.Descricao,
                 IdFornecedor = x.IdFornecedor,
-                Servicos = x.Servicos.Select(c => new ServicoFornecedorDTO { IdServicoFornecedor = c.IdServicoFornecedor, Servico = c.Servico }).ToList(),
+                //Servicos = x.Servicos.Select(c => new ServicoFornecedorDTO { IdServicoFornecedor = c.IdServicoFornecedor, Servico = c.Servico }).ToList(),
                 Status = x.Status
             }).ToList();
         }
@@ -59,5 +59,19 @@ namespace ABCiencias.Models.Servicos.Fornecedores
             return _context.Servicos.ToList();
         }
 
+        public FornecedoresDTO ObterInformacoesFornecedor(int id)
+        {
+            var retorno = _context.Fornecedores.Where(x => x.IdFornecedor == id)
+                .Select(x => new FornecedoresDTO
+                {
+                    RazaoSocial = x.RazaoSocial,
+                    CNPJ = x.CNPJ,
+                    Descricao = x.Descricao,
+                    IdFornecedor = x.IdFornecedor,
+                    Servicos = x.Servicos.Select(c => new ServicoFornecedorDTO { IdServicoFornecedor = c.IdServicoFornecedor, Servico = c.Servico }).ToList(),
+                    Status = x.Status
+                }).FirstOrDefault();
+            return retorno;
+        }
     }
 }

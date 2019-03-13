@@ -1,0 +1,46 @@
+﻿<div class="container text-center">
+    <div class="figure-img">
+        <img alt="imagem_fornecedor" src="https://blog.biroshop.com.br/wp-content/uploads/sites/3/2018/09/fornecedores.jpg" width="250" height="250" style="display:block; margin-left:auto; margin-right:auto;" />
+    </div>
+    <div class="col-10 offset-1">
+
+        <div class="form-group">
+            <label>Razão Social</label>
+            <input type="text" class="form-control" readonly value="{{fornecedor.RazaoSocial}}" />
+        </div>
+        <div>
+            <label>CNPJ</label>
+            <input type="text" class="form-control text-center" value="{{fornecedor.CNPJ}}" readonly/>
+        </div>
+        <div>
+            <label>Data de Cadastro</label>
+            <input type="date" class="form-control" readonly/>
+        </div>
+        <div>
+            <label>Descricao</label>
+            <textarea type="text" class="form-control" rows="3"readonly>{{fornecedor.Descricao}}</textarea>
+        </div>
+        <table align="center" class="table-hover table text-center" style="margin-top:2%">
+            <tr>
+                <th>Nome</th>
+                <th>Preco</th>
+                <th>Nota</th>
+                <th>Actions</th>
+            </tr>
+            <tr ng-repeat="x in fornecedor.Servicos">
+                <td>
+                    {{x.Servico.Nome}}
+                </td>
+                <td>
+                    50$
+                </td>
+                <td>
+                    5 estrelas
+                </td>
+                <td>
+                    <button class="btn btn-info">Detalhes</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

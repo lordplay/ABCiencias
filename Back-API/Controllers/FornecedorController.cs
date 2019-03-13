@@ -33,6 +33,10 @@ namespace ABCiencias.Controllers
         {
             return Ok(_fornecedorService.ObterServicos());
         }
+        public IHttpActionResult ObterInformacoesFornecedor([FromBody] int id)
+        {
+            return Ok(_fornecedorService.ObterInformacoesFornecedor(id));
+        }
 
     }
 }

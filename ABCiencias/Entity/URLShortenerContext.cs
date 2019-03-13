@@ -14,6 +14,15 @@ namespace ABCiencias.Entity
         {
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-B9MSDME\SQLEXPRESS;Initial Catalog=UrlDbContext;Integrated Security=True");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<URLShortener>()
+                .HasIndex(x => x.Guid)
+                .IsUnique();
+        }
+
         public override int SaveChanges()
         {
             return base.SaveChanges();

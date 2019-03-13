@@ -5,8 +5,9 @@ namespace ABCiencias.Models.Servicos.Fornecedores
 {
     public interface IFornecedorService
     {
-        ICollection<ObterFornecedoresModel> ObterFornecedores();
+        ICollection<FornecedoresDTO> ObterFornecedores();
         void CadastrarFornecedor(CadastroFornecedorModel cadastro);
         List<Servico> ObterServicos();
+        FornecedoresDTO ObterInformacoesFornecedor(int id);
     }
 }

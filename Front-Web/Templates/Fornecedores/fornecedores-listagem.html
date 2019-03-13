@@ -1,15 +1,21 @@
-﻿<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Type</th>
-        </tr>
-    </thead>
-    <tbody ng-repeat="x in fornecedores">
-        <tr>
-            <td>
-                {{x.RazaoSocial}}
-            </td>
-        </tr>
-    </tbody>
-</table>
+﻿<table class="table-hover table-light table">
+    <tr>
+        <th>#</th>
+        <th>Razão Social</th>
+        <th>Nota</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="x in fornecedores">
+        <td>
+            {{x.IdFornecedor}}
+        </td>
+        <td>
+            {{x.RazaoSocial}}
+        </td>
+        <td></td>
+        <td>
+            <a ui-sref="fornecedores.info({Id:{{x.IdFornecedor}}})" class="btn btn-primary">Info</a>
+        </td>
+    <tr>
 
+</table>

@@ -1,4 +1,5 @@
 ﻿using ABCiencias.Models;
+using ABCiencias.Models.Eventos;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,11 @@ namespace ABCiencias.Entity
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<CategoriaServico> CategoriaServico { get; set; }
         public DbSet<ServicoFornecedor> ServicoFornecedor { get; set; }
+        public DbSet<ContratoEvento> ContratoEventos { get; set; }
+        public DbSet<Evento> Eventos { get; set; }
+        public DbSet<ServicoEventoFornecedor> ServicoEventoFornecedor { get; set; }
+
+
 
         public override int SaveChanges()
         {
@@ -25,6 +31,7 @@ namespace ABCiencias.Entity
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             base.OnModelCreating(modelBuilder);
         }
 

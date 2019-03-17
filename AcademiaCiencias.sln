@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Front-Web", "Front-Web\Fron
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-UrlShortener", "Back-UrlShortener\Back-UrlShortener.csproj", "{051852E1-5264-4ACD-BAC1-FE417CCAD33C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back-Mobile", "Back-Mobile\Back-Mobile.csproj", "{0CB5C29E-B1A1-4152-ADE9-72D29BC4E091}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{051852E1-5264-4ACD-BAC1-FE417CCAD33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051852E1-5264-4ACD-BAC1-FE417CCAD33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{051852E1-5264-4ACD-BAC1-FE417CCAD33C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB5C29E-B1A1-4152-ADE9-72D29BC4E091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB5C29E-B1A1-4152-ADE9-72D29BC4E091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB5C29E-B1A1-4152-ADE9-72D29BC4E091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB5C29E-B1A1-4152-ADE9-72D29BC4E091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using ABCiencias.Models;
 using ABCiencias.Models.Eventos;
+using ABCiencias.Models.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace ABCiencias.Entity
@@ -13,6 +14,7 @@ namespace ABCiencias.Entity
         DbSet<ContratoEvento> ContratoEventos { get; set; }
         DbSet<Evento> Eventos { get; set; }
         DbSet<ServicoEventoFornecedor> ServicoEventoFornecedor { get; set; }
+        DbSet<User> Users { get; set; }
         int SaveChanges();
     }
 }

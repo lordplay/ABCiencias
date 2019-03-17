@@ -12,6 +12,8 @@ namespace ABCiencias.Models.Eventos
         public string NomeEvento { get; set; }
         public ContratoEvento Contrato { get; set; }
         public DateTime Data_Evento { get; set; }
+        public EnumStatusEvento Status { get; set; }
+        public string Descricao { get; set; }
 
     }
 }

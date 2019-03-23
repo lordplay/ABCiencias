@@ -15,6 +15,7 @@ namespace ABCiencias.Entity
         DbSet<Evento> Eventos { get; set; }
         DbSet<ServicoEventoFornecedor> ServicoEventoFornecedor { get; set; }
         DbSet<User> Users { get; set; }
+        DbSet<URLShortener> Urls { get; set; }
         int SaveChanges();
     }
 }

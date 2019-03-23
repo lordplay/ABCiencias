@@ -8,8 +8,8 @@ namespace ABCiencias.Models.Servicos.Shortener
 {
     public class ShortenerService : IShortenerService
     {
-        private IURLShortenerContext _context;
-        public ShortenerService(IURLShortenerContext context)
+        private IABCienciasContext _context;
+        public ShortenerService(IABCienciasContext context)
         {
             _context = context;
         }

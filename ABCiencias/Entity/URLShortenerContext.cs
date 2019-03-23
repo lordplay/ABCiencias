@@ -12,7 +12,7 @@ namespace ABCiencias.Entity
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-B9MSDME\SQLEXPRESS;Initial Catalog=UrlDbContext;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=abcdb.cwg2u9ksin9u.us-east-2.rds.amazonaws.com,1433;Initial Catalog=db_abc_dev;Persist Security Info=True;User ID=sansone;Password=MSP#1234");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

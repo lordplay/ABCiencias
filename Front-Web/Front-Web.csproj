@@ -101,6 +101,7 @@
     <Content Include="Content\JS\angularcore.min.js">
       <DependentUpon>angularcore.js</DependentUpon>
     </Content>
+    <Content Include="Content\JS\Controllers.min.js" />
     <Content Include="Content\JS\mainmodule.js" />
     <Content Include="Content\JS\mainmodule.min.js">
       <DependentUpon>mainmodule.js</DependentUpon>

@@ -7,7 +7,7 @@
         .factory('RequestFactory', [RequestFactory]);
 
     function RequestFactory() {
-        var backapiurl = 'http://localhost:59006/api/';
+        var backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/';
 
         var service = {
             backapiurl: backapiurl

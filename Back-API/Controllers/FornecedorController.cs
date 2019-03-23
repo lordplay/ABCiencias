@@ -24,6 +24,11 @@ namespace ABCiencias.Controllers
         {
             return Ok(_fornecedorService.ObterFornecedores());
         }
+        [HttpGet]
+        public IHttpActionResult Teste()
+        {
+            return Ok("Testado Lixo");
+        }
         public IHttpActionResult CadastrarFornecedor([FromBody]CadastroFornecedorModel cadastro)
         {
             _fornecedorService.CadastrarFornecedor(cadastro);

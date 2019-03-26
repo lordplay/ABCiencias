@@ -50,7 +50,7 @@ namespace ABCiencias.Models.Servicos.Shortener
                 if (IsValidGuid(Guid))
                 {
                     IsValid = true;
-                    var retorno = new URLShortener() { Domain = "http://localhost:63649/", Guid = Guid };
+                    var retorno = new URLShortener() { Domain = _context.Configs.Single().BackUrlShortenerDomain, Guid = Guid };
                     return retorno;
                 }
             }
@@ -104,7 +104,7 @@ namespace ABCiencias.Models.Servicos.Shortener
 
         public URLShortener ObterUrlToRedirect(string Guid)
         {
-            var retono = _context.Urls.Where(x => x.Guid == Guid).FirstOrDefault();
+            var retono = _context.Urls.FirstOrDefault(x => x.Guid == Guid && x.Status == EnumStatusUrl.Ativa);
             if (retono != null)
                 Click(ref retono);
 

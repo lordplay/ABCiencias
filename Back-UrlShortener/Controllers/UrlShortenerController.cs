@@ -21,11 +21,14 @@ namespace Back_UrlShortener.Controllers
         [Route("{guid}")]
         public IHttpActionResult ObterUrlToRedirect(string guid)
         {
-            var redirectTo = _service.ObterUrlToRedirect(guid);
-            if (redirectTo != null)
-                return Redirect(redirectTo.UrlToRedirect);
+            if (!string.IsNullOrEmpty(guid))
+            {
+                var redirectTo = _service.ObterUrlToRedirect(guid);
+                if (redirectTo != null)
+                    return Redirect(redirectTo.UrlToRedirect);
+            }
 
-            return NotFound();
+            return Redirect("http://www.abc.org.br");
         }
         [HttpGet]
         public IHttpActionResult ObterUrlToRedirect()

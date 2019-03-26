@@ -18,6 +18,7 @@ namespace Back_UrlShortener
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IShortenerService, ShortenerService>();
             container.RegisterType<IURLShortenerContext, URLShortenerContext>();
+            container.RegisterType<IABCienciasContext, ABCienciasContext>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

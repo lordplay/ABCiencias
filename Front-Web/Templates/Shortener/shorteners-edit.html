@@ -1,4 +1,4 @@
-﻿<div class="col-10 offset-1">
+﻿<div class="col-10 offset-1 ">
     <div class="custom-control custom-switch">
         <input type="checkbox" class="custom-control-input dropright" id="status" ng-model="UrlData.Status" ng-checked="checked" ng-click="AlteraStatus()">
         <label class="custom-control-label" for="status">{{Texto}}</label>
@@ -22,8 +22,8 @@
             <label class="col-form-label">
                 URL Encurtada
             </label>
-            <input type="text" class="form-control text-center" ng-model="[UrlData.Domain]+[UrlData.Guid] " readonly />
-            <button class="btn btn-success col-6 offset-3 mt-5" ng-click="ObterNovaUrl()">Gerar Novo Link</button>
+            <input type="text" class="form-control text-center" ng-model="UrlEncurtada()" readonly />
+            <button class="btn btn-success col-6 offset-3 mt-5" ng-click="ObterNovaUrl()">Gerar Link</button>
         </div>
     </div>
     <div class="row">

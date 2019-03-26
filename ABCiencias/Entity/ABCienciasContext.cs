@@ -1,4 +1,5 @@
 ﻿using ABCiencias.Models;
+using ABCiencias.Models.Config;
 using ABCiencias.Models.Eventos;
 using ABCiencias.Models.User;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,7 @@ namespace ABCiencias.Entity
         public DbSet<ServicoEventoFornecedor> ServicoEventoFornecedor { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<URLShortener> Urls { get; set; }
-
+        public DbSet<Config> Configs { get; set; }
 
 
         public override int SaveChanges()

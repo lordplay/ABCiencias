@@ -4,14 +4,16 @@ using ABCiencias.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ABCiencias.Migrations
 {
     [DbContext(typeof(ABCienciasContext))]
-    partial class ABCienciasContextModelSnapshot : ModelSnapshot
+    [Migration("20190323082510_2019032302")]
+    partial class _2019032302
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,19 +34,6 @@ namespace ABCiencias.Migrations
                     b.HasKey("IdCategoriaServico");
 
                     b.ToTable("CategoriaServico");
-                });
-
-            modelBuilder.Entity("ABCiencias.Models.Config.Config", b =>
-                {
-                    b.Property<int>("IdConfig")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("BackUrlShortenerDomain");
-
-                    b.HasKey("IdConfig");
-
-                    b.ToTable("Configs");
                 });
 
             modelBuilder.Entity("ABCiencias.Models.Eventos.ContratoEvento", b =>

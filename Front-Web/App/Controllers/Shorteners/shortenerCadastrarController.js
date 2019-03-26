@@ -12,8 +12,10 @@
         $scope.ObterNovaUrl = ObterNovaUrl;
 
         function Cadastrar(cadastro) {
-            console.log(cadastro);
             ShortenerService.CadastrarUrl(cadastro).then(function (response) {
+                if(response){
+                    alert("Voce será redirecionado")
+                }
                 $state.go('shortener.edit', { UrlId: response })
             })
         }

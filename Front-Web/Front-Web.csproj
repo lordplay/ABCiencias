@@ -45,10 +45,12 @@
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -61,21 +63,27 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -97,11 +105,88 @@
     <Content Include="App\Services\RequestFactory.js" />
     <Content Include="App\Services\ShortenerService.js" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bower_components\bower_components\angular-sweetalert\SweetAlert.js" />
+    <Content Include="Content\bower_components\bower_components\angular-sweetalert\SweetAlert.min.js" />
+    <Content Include="Content\bower_components\bower_components\angular\angular-csp.css" />
+    <Content Include="Content\bower_components\bower_components\angular\angular.js" />
+    <Content Include="Content\bower_components\bower_components\angular\angular.min.js" />
+    <Content Include="Content\bower_components\bower_components\angular\index.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\js\npm.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\Gruntfile.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\affix.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\alert.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\button.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\carousel.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\collapse.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\dropdown.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\modal.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\popover.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\scrollspy.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\tab.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\tooltip.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\transition.js" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\package.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\gulpfile-wrap-template.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\ie9.css" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\loader-animation.css" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\default-params.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\handle-click.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\handle-dom.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\handle-key.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\handle-swal-dom.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\injected-html.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\set-params.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\modules\utils.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\sweetalert.es6.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dist\sweetalert-dev.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dist\sweetalert.css" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dist\sweetalert.min.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\example.css" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\logo_big%402x.png" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\logo_big.png" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\logo_small%402x.png" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\logo_small.png" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\te-logo-small.svg" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\thumbs-up.jpg" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\vs_icon%402x.png" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\images\vs_icon.png" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\gulpfile.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\index.html" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\default-params.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\handle-click.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\handle-dom.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\handle-key.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\handle-swal-dom.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\injected-html.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\set-params.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\modules\utils.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\lib\sweetalert.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\sweetalert.gif" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\test\index.html" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\test\tests.js" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\themes\facebook\facebook.css" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\themes\google\google.css" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\themes\twitter\twitter.css" />
     <Content Include="Content\JS\angularcore.js" />
     <Content Include="Content\JS\angularcore.min.js">
       <DependentUpon>angularcore.js</DependentUpon>
     </Content>
-    <Content Include="Content\JS\Controllers.min.js" />
+    <Content Include="Content\JS\Controllers.js" />
+    <Content Include="Content\JS\controllers.min.js">
+      <DependentUpon>Controllers.js</DependentUpon>
+    </Content>
     <Content Include="Content\JS\mainmodule.js" />
     <Content Include="Content\JS\mainmodule.min.js">
       <DependentUpon>mainmodule.js</DependentUpon>
@@ -114,11 +199,17 @@
     <Content Include="Content\JS\servicesbundle.min.js">
       <DependentUpon>servicesbundle.js</DependentUpon>
     </Content>
+    <Content Include="Content\JS\SweetAlertBundle.js" />
+    <Content Include="Content\JS\SweetAlertBundle.min.js">
+      <DependentUpon>SweetAlertBundle.js</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-cookies.js" />
     <Content Include="scripts\angular-cookies.min.js" />
+    <Content Include="scripts\angular-counter-with-easing.min.js" />
+    <Content Include="scripts\angular-counter.min.js" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular-route.js" />
     <Content Include="scripts\angular-route.min.js" />
@@ -128,6 +219,10 @@
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\dirPagination.js" />
     <Content Include="scripts\dirPagination.tpl.html" />
+    <Content Include="scripts\jquery.easing.min.js" />
+    <Content Include="scripts\Sweet-alert-fix.js" />
+    <Content Include="scripts\SweetAlert.js" />
+    <Content Include="scripts\sweetalert.min.js" />
     <Content Include="Templates\Fornecedores\fornecedores-info.html" />
     <Content Include="Templates\Fornecedores\fornecedores-listagem.html" />
     <Content Include="Index.html" />
@@ -135,7 +230,9 @@
     <Content Include="Templates\Shortener\shorteners-edit.html" />
     <Content Include="Templates\Shortener\shorteners-listagem.html" />
     <Content Include="Templates\Utils\dirPagination.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -147,6 +244,131 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="bundleconfig.json" />
+    <Content Include="Content\bower_components\bower_components\angular-sweetalert\.bower.json" />
+    <Content Include="Content\bower_components\bower_components\angular-sweetalert\bower.json" />
+    <Content Include="Content\bower_components\bower_components\angular-sweetalert\LICENSE" />
+    <Content Include="Content\bower_components\bower_components\angular-sweetalert\package.json" />
+    <Content Include="Content\bower_components\bower_components\angular-sweetalert\README.md" />
+    <Content Include="Content\bower_components\bower_components\angular\.bower.json" />
+    <Content Include="Content\bower_components\bower_components\angular\angular.min.js.gzip" />
+    <Content Include="Content\bower_components\bower_components\angular\angular.min.js.map" />
+    <Content Include="Content\bower_components\bower_components\angular\bower.json" />
+    <Content Include="Content\bower_components\bower_components\angular\LICENSE.md" />
+    <Content Include="Content\bower_components\bower_components\angular\package.json" />
+    <Content Include="Content\bower_components\bower_components\angular\README.md" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\.bower.json" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\bower.json" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\CHANGELOG.md" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\grunt\.jshintrc" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\grunt\configBridge.json" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\.jscsrc" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\js\.jshintrc" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\.csscomb.json" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\.csslintrc" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\alerts.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\badges.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\bootstrap.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\button-groups.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\buttons.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\carousel.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\close.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\code.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\component-animations.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\dropdowns.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\forms.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\glyphicons.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\grid.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\input-groups.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\jumbotron.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\labels.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\list-group.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\media.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\forms.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\grid.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\image.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\labels.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\panels.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\resize.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\size.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\modals.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\navbar.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\navs.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\normalize.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\pager.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\pagination.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\panels.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\popovers.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\print.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\progress-bars.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\responsive-embed.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\scaffolding.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\tables.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\theme.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\thumbnails.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\tooltip.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\type.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\utilities.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\variables.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\less\wells.less" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\LICENSE" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\package.json" />
+    <Content Include="Content\bower_components\bower_components\bootstrap\README.md" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\.bower.json" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\.editorconfig" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\.gitignore" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\.jshintrc" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\.travis.yml" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\bower.json" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\dev\sweetalert.scss" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\example\example.scss" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\LICENSE" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\package.json" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\README.md" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\themes\facebook\facebook.scss" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\themes\google\google.scss" />
+    <Content Include="Content\bower_components\bower_components\sweetalert\themes\twitter\twitter.scss" />
     <None Include="packages.config" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-animate.min.js.map" />
@@ -191,12 +413,10 @@
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets'))" />
   </Target>
-  <Import Project="..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

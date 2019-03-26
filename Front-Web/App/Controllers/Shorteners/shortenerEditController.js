@@ -4,22 +4,19 @@
 
     angular
         .module('MainModule')
-        .controller('ShortenerEditController', ['$scope', '$stateParams', 'ShortenerService', shortenerEditController]);
+        .controller('ShortenerEditController', ['$scope', '$stateParams', 'ShortenerService','SweetAlert', shortenerEditController]);
 
-    function shortenerEditController($scope, $stateParams, ShortenerService) {
+    function shortenerEditController($scope, $stateParams, ShortenerService, SweetAlert) {
+
         $scope.UrlData = {};
-
         $scope.ObterNovaUrl = ObterNovaUrl;
         $scope.SalvarEdicao = SalvarEdicao;
         $scope.AlteraStatus = AlteraStatus;
-        $scope.UrlEncurtada = 1;
+        $scope.StartClicks = 0;
+        $scope.UrlData.Clicks = 0;
 
         if ($stateParams.UrlId) {
             ObterDadosUrl($stateParams.UrlId);
-        }
-
-        function UrlEncurtada() {
-            return $scope.UrlData.Domain + $scope.UrlData.Guid
         }
 
         function ObterDadosUrl(id) {
@@ -38,6 +35,7 @@
         }
         function SalvarEdicao(objeto) {
             ShortenerService.SalvarEdicao(objeto).then(function (response) {
+                SweetAlert.swal("Parabéns", "Salvo com sucesso", "success");
             })
         }
         function AlteraStatus() {

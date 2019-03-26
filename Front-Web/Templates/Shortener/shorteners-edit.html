@@ -22,14 +22,31 @@
             <label class="col-form-label">
                 URL Encurtada
             </label>
-            <input type="text" class="form-control text-center" ng-model="UrlEncurtada()" readonly />
-            <button class="btn btn-success col-6 offset-3 mt-5" ng-click="ObterNovaUrl()">Gerar Link</button>
+            <input type="text" class="form-control text-center" ng-model="UrlData.Domain+UrlData.Guid" readonly />
+            <button class="btn btn-success col-6 offset-3 mt-5" ng-click="ObterNovaUrl()">Gerar novo link</button>
+        </div>
+    </div>
+    <div class="row">
+        <div style="display:table;margin: 0 auto">
+            <span>{{ autoStartVar | number:0 }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div style="display:table;margin: 0 auto">
+            <span>Acessos</span>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
             <button class="float-right btn btn-primary col-3 mt-5" ng-click="SalvarEdicao(UrlData)">Salvar</button>
+            <div class="counter"
+                 value="autoStartVar"
+                 duration="1500"
+                 to="UrlData.Clicks">
+            </div>
+
             <button ui-sref="shortener.listagem" class="float-left btn btn-secondary col-3 mt-5">Voltar</button>
         </div>
     </div>
 </div>
+

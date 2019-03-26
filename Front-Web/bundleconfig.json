@@ -29,11 +29,19 @@
     ]
   },
   {
-    "outputFileName": "Content/JS/Controllers.min.js",
+    "outputFileName": "Content/JS/controllers.js",
     "inputFiles": [
       "App/Controllers/Fornecedores",
       "App/Controllers/Shorteners"
-
+    ]
+  },
+  {
+    "outputFileName": "Content/JS/SweetAlertBundle.js",
+    "inputFiles": [
+      "scripts/Sweet-alert-fix.js",
+      "scripts/SweetAlert.js",
+      "scripts/sweetalert.min.js",
+      "Content/bower_components/bower_components/angular-sweetalert/SweetAlert.js"
     ]
   }
 ]

@@ -14,9 +14,17 @@ namespace ABCiencias.Models.Servicos.Shortener
             _context = context;
         }
 
-        public ICollection<URLShortener> ObterUrlsAtivas()
+        public URLShortenerDTO ObterUrls(int page)
         {
-            return _context.Urls.ToList();
+            page = page - 1;
+
+            URLShortenerDTO retorno = new URLShortenerDTO();
+
+            var links = _context.Urls.Skip(page * 25).Take(25).ToList();
+            retorno.URLShorteners = links;
+            retorno.Count = _context.Urls.Count();
+
+            return retorno;
         }
         public int AdicionarLink(URLShortener uRL)
         {

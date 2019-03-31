@@ -19,10 +19,10 @@ namespace ABCiencias.Controllers
             _service = service;
         }
 
-        [HttpGet]
-        public ICollection<URLShortener> ObterUrlsAtivas()
+        [HttpPost]
+        public URLShortenerDTO ObterUrls([FromBody]int page)
         {
-            return _service.ObterUrlsAtivas();
+            return _service.ObterUrls(page);
         }
 
         [HttpPost]

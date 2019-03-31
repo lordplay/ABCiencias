@@ -85,18 +85,28 @@
 
     function shortenerController($scope, ShortenerService) {
 
-        ObterUrls();
+        $scope.shorteners = [];
+        $scope.totalUrls = 0;
+
+        ObterUrls(1);
+
+
         $scope.StatusLink = StatusLink;
         $scope.AlterarStatus = AlterarStatus;
         $scope.Confirmacao = Confirmacao;
         $scope.Delete = Delete;
+        $scope.pageChaged = pageChaged;
 
 
-
-        function ObterUrls() {
-            ShortenerService.ObterUrlsAtivas().then(function (response) {
-                $scope.shorteners = response;
+        function ObterUrls(page) {
+            ShortenerService.ObterUrls(page).then(function (response) {
+                $scope.shorteners = response.URLShorteners;
+                $scope.totalUrls = response.Count;
             })
+        }
+
+        function pageChaged(newpage) {
+            ObterUrls(newpage);
         }
 
         function StatusLink(int) {

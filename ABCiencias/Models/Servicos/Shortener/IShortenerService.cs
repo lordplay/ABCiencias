@@ -6,7 +6,7 @@ namespace ABCiencias.Models.Servicos.Shortener
     {
         int AdicionarLink(URLShortener uRL);
         void Update(URLShortener uRL);
-        ICollection<URLShortener> ObterUrlsAtivas();
+        URLShortenerDTO ObterUrls(int page);
         URLShortener ObterUrlPorId(int? id);
         URLShortener ObterNovaUrl();
         bool Delete(int id);

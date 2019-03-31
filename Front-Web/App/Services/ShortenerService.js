@@ -11,13 +11,13 @@
             ObterDadosUrl: ObterDadosUrl,
             ObterNovaUrl: ObterNovaUrl,
             SalvarEdicao: SalvarEdicao,
-            ObterUrlsAtivas: ObterUrlsAtivas,
+            ObterUrls: ObterUrls,
             CadastrarUrl: CadastrarUrl,
             Delete: Delete
         };
 
-        function ObterUrlsAtivas() {
-            return $http({ method: 'GET', url: RequestFactory.backapiurl + 'Shortener/ObterUrlsAtivas' }).then(function (response) {
+        function ObterUrls(page) {
+            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Shortener/ObterUrls', data: page }).then(function (response) {
                 return response.data;
             });
         }

@@ -41,7 +41,16 @@
         .factory('RequestFactory', [RequestFactory]);
 
     function RequestFactory() {
-        var backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/';
+        var backapiurl;
+        var ambiente = 'dev';
+
+        switch (ambiente) {
+            case 'hml':
+                backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/'
+            case 'dev':
+                backapiurl = 'http://localhost:59006/api/'
+            default:
+        }
 
         var service = {
             backapiurl: backapiurl
@@ -68,13 +77,13 @@
             ObterDadosUrl: ObterDadosUrl,
             ObterNovaUrl: ObterNovaUrl,
             SalvarEdicao: SalvarEdicao,
-            ObterUrlsAtivas: ObterUrlsAtivas,
+            ObterUrls: ObterUrls,
             CadastrarUrl: CadastrarUrl,
             Delete: Delete
         };
 
-        function ObterUrlsAtivas() {
-            return $http({ method: 'GET', url: RequestFactory.backapiurl + 'Shortener/ObterUrlsAtivas' }).then(function (response) {
+        function ObterUrls(page) {
+            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Shortener/ObterUrls', data: page }).then(function (response) {
                 return response.data;
             });
         }

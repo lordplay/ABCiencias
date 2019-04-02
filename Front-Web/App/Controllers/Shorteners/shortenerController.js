@@ -13,9 +13,7 @@
 
         ObterUrls(1);
 
-
         $scope.StatusLink = StatusLink;
-        $scope.AlterarStatus = AlterarStatus;
         $scope.Confirmacao = Confirmacao;
         $scope.Delete = Delete;
         $scope.pageChaged = pageChaged;
@@ -36,9 +34,6 @@
             if (int)
                 return "Ativo"
             return "Inativo"
-        }
-        function AlterarStatus(Id, ) {
-
         }
         function Confirmacao(id, nome) {
             $scope.delete = {};

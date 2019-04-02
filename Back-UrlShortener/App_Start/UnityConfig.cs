@@ -1,4 +1,5 @@
 using ABCiencias.Entity;
+using ABCiencias.Models.Servicos.Log;
 using ABCiencias.Models.Servicos.Shortener;
 using System.Web.Http;
 using Unity;
@@ -19,6 +20,7 @@ namespace Back_UrlShortener
             container.RegisterType<IShortenerService, ShortenerService>();
             container.RegisterType<IURLShortenerContext, URLShortenerContext>();
             container.RegisterType<IABCienciasContext, ABCienciasContext>();
+            container.RegisterType<ILogService, LogService>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

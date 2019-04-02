@@ -1,6 +1,7 @@
 ﻿using ABCiencias.Models;
 using ABCiencias.Models.Config;
 using ABCiencias.Models.Eventos;
+using ABCiencias.Models.Servicos.Log;
 using ABCiencias.Models.User;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,6 +22,7 @@ namespace ABCiencias.Entity
         public DbSet<User> Users { get; set; }
         public DbSet<URLShortener> Urls { get; set; }
         public DbSet<Config> Configs { get; set; }
+        public DbSet<LogRequest> LogRequests { get; set; }
 
 
         public override int SaveChanges()

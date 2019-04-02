@@ -15,6 +15,7 @@ namespace ABCiencias.Models
         public EnumStatusUrl Status { get; set; }
         public string Nome { get; set; }
         public string Domain { get; set; }
+        public DateTime DT_Criacao { get; set; }
 
         public void Click()
         {

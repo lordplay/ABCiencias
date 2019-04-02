@@ -4,17 +4,17 @@
 
     angular
         .module('MainModule')
-        .controller('ShortenerCadastrarController', ['$scope', 'ShortenerService', '$state', ShortenerCadastrarController]);
+        .controller('ShortenerCadastrarController', ['$scope', 'ShortenerService', '$state', 'SweetAlert', ShortenerCadastrarController]);
 
-    function ShortenerCadastrarController($scope, ShortenerService, $state) {
+    function ShortenerCadastrarController($scope, ShortenerService, $state, SweetAlert) {
         $scope.Cadastrar = Cadastrar;
         $scope.UrlData = {};
         $scope.ObterNovaUrl = ObterNovaUrl;
 
         function Cadastrar(cadastro) {
             ShortenerService.CadastrarUrl(cadastro).then(function (response) {
-                if(response){
-                    alert("Voce será redirecionado")
+                if (response) {
+                    SweetAlert.swal("Parabéns", "Salvo com sucesso", "success");
                 }
                 $state.go('shortener.edit', { UrlId: response })
             })

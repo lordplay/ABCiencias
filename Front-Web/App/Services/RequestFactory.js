@@ -7,24 +7,20 @@
         .factory('RequestFactory', [RequestFactory]);
 
     function RequestFactory() {
-        var backapiurl;
-        var ambiente = 'dev';
 
-        switch (ambiente) {
-            case 'hml':
-                backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/'
-            case 'dev':
-                backapiurl = 'http://localhost:59006/api/'
-            default:
-        }
+        var backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/'
+
+        //switch (ambiente) {
+        //    case 'dev':
+        //        backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/'
+        //    case 'local':
+        //        backapiurl = 'http://localhost:59006/api/'
+        //}
 
         var service = {
             backapiurl: backapiurl
         };
 
-        function backapiurl() {
-            return url;
-        }
 
         return service;
     }

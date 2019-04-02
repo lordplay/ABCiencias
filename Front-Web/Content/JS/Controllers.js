@@ -48,17 +48,17 @@
 
     angular
         .module('MainModule')
-        .controller('ShortenerCadastrarController', ['$scope', 'ShortenerService', '$state', ShortenerCadastrarController]);
+        .controller('ShortenerCadastrarController', ['$scope', 'ShortenerService', '$state', 'SweetAlert', ShortenerCadastrarController]);
 
-    function ShortenerCadastrarController($scope, ShortenerService, $state) {
+    function ShortenerCadastrarController($scope, ShortenerService, $state, SweetAlert) {
         $scope.Cadastrar = Cadastrar;
         $scope.UrlData = {};
         $scope.ObterNovaUrl = ObterNovaUrl;
 
         function Cadastrar(cadastro) {
             ShortenerService.CadastrarUrl(cadastro).then(function (response) {
-                if(response){
-                    alert("Voce será redirecionado")
+                if (response) {
+                    SweetAlert.swal("Parabéns", "Salvo com sucesso", "success");
                 }
                 $state.go('shortener.edit', { UrlId: response })
             })
@@ -90,9 +90,7 @@
 
         ObterUrls(1);
 
-
         $scope.StatusLink = StatusLink;
-        $scope.AlterarStatus = AlterarStatus;
         $scope.Confirmacao = Confirmacao;
         $scope.Delete = Delete;
         $scope.pageChaged = pageChaged;
@@ -113,9 +111,6 @@
             if (int)
                 return "Ativo"
             return "Inativo"
-        }
-        function AlterarStatus(Id, ) {
-
         }
         function Confirmacao(id, nome) {
             $scope.delete = {};

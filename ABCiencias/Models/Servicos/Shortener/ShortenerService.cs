@@ -14,15 +14,18 @@ namespace ABCiencias.Models.Servicos.Shortener
             _context = context;
         }
 
-        public URLShortenerDTO ObterUrls(int page)
+        public URLShortenerDTO ObterUrls(int page, string search)
         {
             page = page - 1;
 
+            if (string.IsNullOrEmpty(search))
+                search = "";
+
             URLShortenerDTO retorno = new URLShortenerDTO();
 
-            var links = _context.Urls.Skip(page * 25).Take(25).ToList();
+            var links = _context.Urls.Where(x => x.Nome.Contains(search)).Skip(page * 25).Take(25).OrderBy(x => x.DT_Criacao).ToList();
             retorno.URLShorteners = links;
-            retorno.Count = _context.Urls.Count();
+            retorno.Count = _context.Urls.Where(x => x.Nome.Contains(search)).Count();
 
             return retorno;
         }

@@ -13,21 +13,28 @@
 
         ObterUrls(1);
 
+        $scope.pesquisar = pesquisar;
         $scope.StatusLink = StatusLink;
         $scope.Confirmacao = Confirmacao;
         $scope.Delete = Delete;
         $scope.pageChaged = pageChaged;
 
-
-        function ObterUrls(page) {
-            ShortenerService.ObterUrls(page).then(function (response) {
+        function pesquisar(search) {
+            ShortenerService.Pesquisar(search).then(function (response) {
                 $scope.shorteners = response.URLShorteners;
                 $scope.totalUrls = response.Count;
             })
         }
 
-        function pageChaged(newpage) {
-            ObterUrls(newpage);
+        function ObterUrls(page, input) {
+            ShortenerService.ObterUrls(page, input).then(function (response) {
+                $scope.shorteners = response.URLShorteners;
+                $scope.totalUrls = response.Count;
+            })
+        }
+
+        function pageChaged(newpage, search) {
+            ObterUrls(newpage, search);
         }
 
         function StatusLink(int) {

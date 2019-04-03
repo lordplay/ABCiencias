@@ -80,11 +80,18 @@
             SalvarEdicao: SalvarEdicao,
             ObterUrls: ObterUrls,
             CadastrarUrl: CadastrarUrl,
-            Delete: Delete
+            Delete: Delete,
+            Pesquisar: Pesquisar
         };
 
-        function ObterUrls(page) {
-            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Shortener/ObterUrls', data: page }).then(function (response) {
+        function Pesquisar(input) {
+            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Shortener/ObterUrls', data: { page: 1, search: input } }).then(function (response) {
+                return response.data;
+            });
+        }
+
+        function ObterUrls(page, input) {
+            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Shortener/ObterUrls', data: { page: page, search: input } }).then(function (response) {
                 return response.data;
             });
         }

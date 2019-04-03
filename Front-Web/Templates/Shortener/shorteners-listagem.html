@@ -1,6 +1,14 @@
 ﻿<div class="row">
-    <div class="col-12">
-        <button ui-sref="shortener.cadastrar" class="btn btn-primary float-right mb-3">Novo Link</button>
+    <div class="col-12 mb-3">
+        <button ui-sref="shortener.cadastrar" class="btn btn-primary float-right">+</button>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="input-group col-10">
+        <input type="text" ng-model="inputsearch" class="form-control" />
+        <span class="input-group-btn">
+            <button class="btn btn-success" ng-click="pesquisar(inputsearch)" type="button">Pesquisar</button>
+        </span>
     </div>
 </div>
 
@@ -30,17 +38,17 @@
                 {{x.Clicks}}
             </td>
             <td>
-                <button ng-click="AlterarStatus(x.Id)" id="btn{{x.Id}}" ng-class="{1 : 'btn-success btn', 0:'btn-warning btn'}[x.Status]">{{StatusLink(x.Status)}}</button>
+                <button ng-click="AlterarStatus(x.Id)" id="btn{{x.Id}}" class="d-block col-12" ng-class="{1 : 'btn-success btn', 0:'btn-warning btn'}[x.Status]">{{StatusLink(x.Status)}}</button>
             </td>
-            <td>
-                <a ui-sref="shortener.edit({UrlId:{{x.Id}}})" class="btn btn-primary">Editar</a>
-                <button ng-click="Confirmacao(x.Id, x.Nome)" class="btn btn-danger">Deletar</button>
+            <td style="display:block">
+                <a ui-sref="shortener.edit({UrlId:{{x.Id}}})" class="btn btn-primary d-block">Editar</a>
+                <button ng-click="Confirmacao(x.Id, x.Nome)" class="btn btn-danger d-block col-12">Deletar</button>
             </td>
         </tr>
     </tbody>
 </table>
 
-<dir-pagination-controls template-url="Templates/Utils/dirPagination.html" max-size="8" direction-links="true" on-page-change="pageChaged(newPageNumber)" boundary-links="true"></dir-pagination-controls>
+<dir-pagination-controls template-url="Templates/Utils/dirPagination.html" max-size="8" direction-links="true" on-page-change="pageChaged(newPageNumber,inputsearch)" boundary-links="true"></dir-pagination-controls>
 
 <div class="modal" id="modal">
     <div class="modal-dialog" role="document">

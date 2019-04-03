@@ -1,5 +1,6 @@
 ﻿using ABCiencias.Models;
 using ABCiencias.Models.Servicos.Shortener;
+using ABCiencias.Models.UrlShorts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,9 @@ namespace ABCiencias.Controllers
         }
 
         [HttpPost]
-        public URLShortenerDTO ObterUrls([FromBody]int page)
+        public URLShortenerDTO ObterUrls([FromBody] ObterUrlsDTO obj)
         {
-            return _service.ObterUrls(page);
+            return _service.ObterUrls(obj.Page, obj.Search);
         }
 
         [HttpPost]

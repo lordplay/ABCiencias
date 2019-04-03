@@ -41,20 +41,25 @@
         .factory('RequestFactory', [RequestFactory]);
 
     function RequestFactory() {
+        var ambiente = 'local';
+        var backapiurl = '';
 
-        var backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/'
+        run();
 
-        //switch (ambiente) {
-        //    case 'dev':
-        //        backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/'
-        //    case 'local':
-        //        backapiurl = 'http://localhost:59006/api/'
-        //}
+        function run() {
+            switch (ambiente) {
+                case "dev":
+                    backapiurl = 'http://backapi-dev.us-west-2.elasticbeanstalk.com/api/';
+                    break;
+                case "local":
+                    backapiurl = 'http://localhost:59006/api/';
+                    break;
+            }
+        }
 
         var service = {
             backapiurl: backapiurl
         };
-
 
         return service;
     }

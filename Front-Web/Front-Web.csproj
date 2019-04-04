@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Controllers\Fornecedores\fornecedorCadastroController.js" />
     <Content Include="App\Controllers\Fornecedores\fornecedoresInfoController.js" />
     <Content Include="App\Controllers\Fornecedores\fornecedoresListagemController.js" />
     <Content Include="App\Controllers\Shorteners\shortenerCadastrarController.js" />
@@ -223,6 +224,7 @@
     <Content Include="scripts\Sweet-alert-fix.js" />
     <Content Include="scripts\SweetAlert.js" />
     <Content Include="scripts\sweetalert.min.js" />
+    <Content Include="Templates\Fornecedores\fornecedores-cadastrar.html" />
     <Content Include="Templates\Fornecedores\fornecedores-info.html" />
     <Content Include="Templates\Fornecedores\fornecedores-listagem.html" />
     <Content Include="Index.html" />

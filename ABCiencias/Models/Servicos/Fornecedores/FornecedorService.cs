@@ -1,6 +1,5 @@
 ﻿using ABCiencias.Entity;
 using ABCiencias.Models.Fornecedores;
-using ABCiencias.Models.Fornecedores.Factory;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,35 +29,33 @@ namespace ABCiencias.Models.Servicos.Fornecedores
                 Status = x.Status
             }).ToList();
         }
-        public void CadastrarFornecedor(CadastroFornecedorModel cadastro)
+        public bool CadastrarFornecedor(CadastroFornecedorDTO cadastro)
         {
-            //Cadastrar somente o fornecedor no banco
-            var fact = new FornecedorFactory(cadastro);
-            _context.Fornecedores.Add(fact.Build());
-
-            _context.SaveChanges();
-
-            //Cadastrar os servicos
-            CadastrarFornecedorServico(fact.Build(), cadastro.Servicos);
-        }
-
-        public void CadastrarFornecedorServico(Fornecedor fornecedor, List<Servico> servicos)
-        {
-            foreach (var servico in servicos)
+            try
             {
-                var servicoFornecedor = new ServicoFornecedor();
-                servicoFornecedor.Fornecedor = fornecedor;
-                servicoFornecedor.Servico = _context.Servicos.Where(x => x.IdServico == servico.IdServico).FirstOrDefault();
-                _context.ServicoFornecedor.Add(servicoFornecedor);
+                //Salvar o cadastro no banco
+                var fornecedor = new Fornecedor() { CNPJ = cadastro.CNPJ, Descricao = cadastro.Descricao, RazaoSocial = cadastro.RazaoSocial, Status = EnumStatusFornecedor.Ativo };
+                _context.Fornecedores.Add(fornecedor);
+                _context.SaveChanges();
+                //Associar os servicos com o fornecedor
+                foreach (var servico in cadastro.Servicos)
+                {
+                    var _servico = new ServicoFornecedor() { Fornecedor = fornecedor, Servico = servico };
+                    fornecedor.Servicos.Add(_servico);
+                }
+                _context.SaveChanges();
+                return true;
             }
-            _context.SaveChanges();
+            catch (Exception e)
+            {
+                return false;
+                throw;
+            }
         }
-
         public List<Servico> ObterServicos()
         {
-            return _context.Servicos.ToList();
+            return _context.Servicos.Include(x => x.Categoria).ToList();
         }
-
         public FornecedoresDTO ObterInformacoesFornecedor(int id)
         {
             var retorno = _context.Fornecedores.Where(x => x.IdFornecedor == id)
@@ -73,5 +70,7 @@ namespace ABCiencias.Models.Servicos.Fornecedores
                 }).FirstOrDefault();
             return retorno;
         }
+
+
     }
 }

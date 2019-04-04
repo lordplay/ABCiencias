@@ -1,0 +1,12 @@
+﻿<h1>
+    Cadastrar Fornecedor
+</h1>
+
+
+
+<div class="form-group">
+    <div class="custom-control custom-checkbox" ng-repeat="servico in servicos">
+        <input type="checkbox" class="custom-control-input" id="{{servico.IdServico}}" ng-checked="checkedService.indexOf(servico) != -1" ng-click="toggleService(servico)" />
+        <label for="{{servico.IdServico}}" class="custom-control-label">{{servico.Nome}}</label>
+    </div>
+</div>

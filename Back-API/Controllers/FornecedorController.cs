@@ -24,16 +24,14 @@ namespace ABCiencias.Controllers
         {
             return Ok(_fornecedorService.ObterFornecedores());
         }
+        [HttpPost]
+        public IHttpActionResult CadastrarFornecedor([FromBody]CadastroFornecedorDTO cadastro)
+        {
+            if (_fornecedorService.CadastrarFornecedor(cadastro))
+                return Ok();
+            return InternalServerError();
+        }
         [HttpGet]
-        public IHttpActionResult Teste()
-        {
-            return Ok("Testado Lixo");
-        }
-        public IHttpActionResult CadastrarFornecedor([FromBody]CadastroFornecedorModel cadastro)
-        {
-            _fornecedorService.CadastrarFornecedor(cadastro);
-            return Ok();
-        }
         public IHttpActionResult ObterServicosDisponiveis()
         {
             return Ok(_fornecedorService.ObterServicos());

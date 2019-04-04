@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ABCiencias.Models
 {
-    public class CadastroFornecedorModel
+    public class CadastroFornecedorDTO
     {
         public string RazaoSocial { get; set; }
         public string CNPJ { get; set; }

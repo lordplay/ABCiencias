@@ -23,6 +23,11 @@
                     templateUrl: 'Templates/Fornecedores/fornecedores-listagem.html',
                     controller: "FornecedoresListagemController"
                 })
+                .state('fornecedores.cadastrar', {
+                    url: "/cadastrar",
+                    templateUrl: 'Templates/Fornecedores/fornecedores-cadastrar.html',
+                    controller: "FornecedorCadastroController"
+                })
                 .state('fornecedores.info', {
                     url: "/listagem/{Id}",
                     templateUrl: 'Templates/Fornecedores/fornecedores-info.html',

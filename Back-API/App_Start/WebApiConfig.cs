@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Back_API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -15,6 +16,7 @@ namespace ABCiencias
             // Rotas da API da Web
             config.MapHttpAttributeRoutes();
 
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new APIKeyHandler());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}/{id}",

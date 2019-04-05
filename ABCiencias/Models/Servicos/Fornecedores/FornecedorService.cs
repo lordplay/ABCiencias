@@ -40,7 +40,7 @@ namespace ABCiencias.Models.Servicos.Fornecedores
                 //Associar os servicos com o fornecedor
                 foreach (var servico in cadastro.Servicos)
                 {
-                    var _servico = new ServicoFornecedor() { Fornecedor = fornecedor, Servico = servico };
+                    var _servico = new ServicoFornecedor() { Fornecedor = fornecedor, IdServico_fk = servico.IdServico };
                     fornecedor.Servicos.Add(_servico);
                 }
                 _context.SaveChanges();

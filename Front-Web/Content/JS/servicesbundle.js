@@ -10,7 +10,8 @@
         var service = {
             ObterFornecedoresAtivos: ObterFornecedoresAtivos,
             ObterInformacoesFornecedor: ObterInformacoesFornecedor,
-            ObterServicos: ObterServicos
+            ObterServicos: ObterServicos,
+            CadastrarFornecedor: CadastrarFornecedor
         };
 
         //retornar apenas os fornecedores 
@@ -30,6 +31,14 @@
 
         function ObterServicos() {
             return $http.get(RequestFactory.backapiurl + 'Fornecedor/ObterServicosDisponiveis').then(function (response) {
+                return response.data;
+            }).catch(function (e) {
+                console.log(e);
+            })
+        }
+
+        function CadastrarFornecedor(cadastro) {
+            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Fornecedor/CadastrarFornecedor', data: cadastro }).then(function (response) {
                 return response.data;
             }).catch(function (e) {
                 console.log(e);

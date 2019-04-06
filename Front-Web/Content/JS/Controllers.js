@@ -3,9 +3,9 @@
 
     angular
         .module('MainModule')
-        .controller('FornecedorCadastroController', ['$scope', 'fornecedorService', 'SweetAlert', FornecedorCadastroController]);
+        .controller('FornecedorCadastroController', ['$scope', 'fornecedorService', 'SweetAlert', '$state',FornecedorCadastroController]);
 
-    function FornecedorCadastroController($scope, fornecedorService, SweetAlert) {
+    function FornecedorCadastroController($scope, fornecedorService, SweetAlert, $state) {
 
         ObterServicos();
         $scope.checkedService = [];
@@ -13,7 +13,6 @@
         $scope.toggleService = function (servico) {
             if ($scope.checkedService.indexOf(servico) === -1) {
                 $scope.checkedService.push(servico);
-                console.log($scope.checkedService);
             } else {
                 $scope.checkedService.splice($scope.checkedService.indexOf(servico), 1);
             }
@@ -22,7 +21,6 @@
         function ObterServicos() {
             fornecedorService.ObterServicos().then(function (response) {
                 $scope.servicos = response;
-                console.log(response);
             });
         }
 
@@ -34,8 +32,8 @@
             cadastro.servicos = $scope.checkedService;
 
             fornecedorService.CadastrarFornecedor(cadastro).then(function (response) {
-                SweetAlert.swal("Ok", response, "success");
-                $state.go('fornecedor.info', { Id: response })
+                SweetAlert.swal("Ok", "Cadastro Realizado", "success");
+                $state.go('fornecedores.info', { Id: response })
             })
         }
 
@@ -53,12 +51,6 @@
     function FornecedoresInfoController($scope, fornecedorService, $stateParams, SweetAlert) {
         $scope.detalhesServico = ObterServicoFornecedor;
         $scope.UpdateServicoFornecedor = UpdateServicoFornecedor;
-
-        clear();
-
-        function clear() {
-            $scope.servico = {};
-        }
 
         function ObterServicoFornecedor(id) {
             fornecedorService.ObterServicoFornecedor(id).then(function (response) {

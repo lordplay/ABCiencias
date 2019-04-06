@@ -10,12 +10,6 @@
         $scope.detalhesServico = ObterServicoFornecedor;
         $scope.UpdateServicoFornecedor = UpdateServicoFornecedor;
 
-        clear();
-
-        function clear() {
-            $scope.servico = {};
-        }
-
         function ObterServicoFornecedor(id) {
             fornecedorService.ObterServicoFornecedor(id).then(function (response) {
                 $("#modal-info-servico").modal("show");

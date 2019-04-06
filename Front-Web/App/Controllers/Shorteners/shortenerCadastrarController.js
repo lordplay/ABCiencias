@@ -15,8 +15,8 @@
             ShortenerService.CadastrarUrl(cadastro).then(function (response) {
                 if (response) {
                     SweetAlert.swal("Parabéns", "Salvo com sucesso", "success");
+                    $state.go('shortener.edit', { UrlId: response })
                 }
-                $state.go('shortener.edit', { UrlId: response })
             })
         }
 

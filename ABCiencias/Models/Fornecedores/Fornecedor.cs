@@ -12,6 +12,7 @@ namespace ABCiencias.Models
         public Fornecedor()
         {
             this.Servicos = new HashSet<ServicoFornecedor>();
+            this.Data_Cadastro = DateTime.Now;
         }
 
         [Key]
@@ -20,6 +21,7 @@ namespace ABCiencias.Models
         public string RazaoSocial { get; set; }
         public string CNPJ { get; set; }
         public string Descricao { get; set; }
+        public DateTime Data_Cadastro { get; set; }
         public virtual ICollection<ServicoFornecedor> Servicos { get; set; }
 
     }

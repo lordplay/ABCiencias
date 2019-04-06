@@ -27,9 +27,8 @@ namespace ABCiencias.Controllers
         [HttpPost]
         public IHttpActionResult CadastrarFornecedor([FromBody]CadastroFornecedorDTO cadastro)
         {
-            if (_fornecedorService.CadastrarFornecedor(cadastro))
-                return Ok();
-            return InternalServerError();
+            var retorno = _fornecedorService.CadastrarFornecedor(cadastro);
+            return Ok(retorno);
         }
         [HttpGet]
         public IHttpActionResult ObterServicosDisponiveis()
@@ -40,6 +39,14 @@ namespace ABCiencias.Controllers
         {
             return Ok(_fornecedorService.ObterInformacoesFornecedor(id));
         }
-
+        public IHttpActionResult ObterServicoFornecedor([FromBody] int id)
+        {
+            return Ok(_fornecedorService.ObterServicoFornecedor(id));
+        }
+        public IHttpActionResult UpdateServicoFornecedor([FromBody]ServicoFornecedor servico)
+        {
+            _fornecedorService.UpdateServicoFornecedor(servico);
+            return Ok();
+        }
     }
 }

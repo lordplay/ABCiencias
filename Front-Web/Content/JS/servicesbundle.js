@@ -11,7 +11,9 @@
             ObterFornecedoresAtivos: ObterFornecedoresAtivos,
             ObterInformacoesFornecedor: ObterInformacoesFornecedor,
             ObterServicos: ObterServicos,
-            CadastrarFornecedor: CadastrarFornecedor
+            CadastrarFornecedor: CadastrarFornecedor,
+            ObterServicoFornecedor: ObterServicoFornecedor,
+            UpdateServicoFornecedor: UpdateServicoFornecedor
         };
 
         //retornar apenas os fornecedores 
@@ -19,6 +21,19 @@
             return $http.get(RequestFactory.backapiurl + 'Fornecedor/ObterFornecedoresAtivos').then(function (response) {
                 return response.data;
             });
+        }
+
+        //Obter informacao do servico do fornecedor
+        function ObterServicoFornecedor(id) {
+            return $http.post(RequestFactory.backapiurl + 'Fornecedor/ObterServicoFornecedor', id).then(function (response) {
+                return response.data;
+            })
+        }
+
+        function UpdateServicoFornecedor(servico) {
+            return $http.post(RequestFactory.backapiurl + 'Fornecedor/UpdateServicoFornecedor', servico).then(function (response) {
+                return response.data;
+            })
         }
 
         function ObterInformacoesFornecedor(id) {

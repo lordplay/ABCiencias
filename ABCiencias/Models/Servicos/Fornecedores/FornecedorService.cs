@@ -29,7 +29,7 @@ namespace ABCiencias.Models.Servicos.Fornecedores
                 Status = x.Status
             }).ToList();
         }
-        public bool CadastrarFornecedor(CadastroFornecedorDTO cadastro)
+        public int CadastrarFornecedor(CadastroFornecedorDTO cadastro)
         {
             try
             {
@@ -44,11 +44,10 @@ namespace ABCiencias.Models.Servicos.Fornecedores
                     fornecedor.Servicos.Add(_servico);
                 }
                 _context.SaveChanges();
-                return true;
+                return fornecedor.IdFornecedor;
             }
             catch (Exception e)
             {
-                return false;
                 throw;
             }
         }
@@ -61,16 +60,36 @@ namespace ABCiencias.Models.Servicos.Fornecedores
             var retorno = _context.Fornecedores.Where(x => x.IdFornecedor == id)
                 .Select(x => new FornecedoresDTO
                 {
+
                     RazaoSocial = x.RazaoSocial,
                     CNPJ = x.CNPJ,
                     Descricao = x.Descricao,
                     IdFornecedor = x.IdFornecedor,
-                    Servicos = x.Servicos.Select(c => new ServicoFornecedorDTO { IdServicoFornecedor = c.IdServicoFornecedor, Servico = c.Servico }).ToList(),
+                    Servicos = x.Servicos.Select(c => new ServicoFornecedorDTO { IdServicoFornecedor = c.IdServicoFornecedor, Servico = c.Servico, Descricao = c.Descricao, Valor = c.Valor, Nota = c.Nota }).ToList(),
                     Status = x.Status
                 }).FirstOrDefault();
             return retorno;
         }
 
+        public ServicoFornecedor ObterServicoFornecedor(int idServicoFornecedor)
+        {
+            return _context.ServicoFornecedor.Find(idServicoFornecedor);
+        }
 
+        public void UpdateServicoFornecedor(ServicoFornecedor servico)
+        {
+            try
+            {
+                var toUpdate = _context.ServicoFornecedor.Find(servico.IdServicoFornecedor);
+                toUpdate.Nota = servico.Nota;
+                toUpdate.Valor = servico.Valor;
+                toUpdate.Descricao = servico.Descricao;
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

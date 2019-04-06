@@ -33,9 +33,10 @@
             cadastro.cnpj = $scope.cnpj;
             cadastro.descricao = $scope.descricao;
             cadastro.servicos = $scope.checkedService;
-            console.log(cadastro);
+
             fornecedorService.CadastrarFornecedor(cadastro).then(function (response) {
                 SweetAlert.swal("Ok", response, "success");
+                $state.go('fornecedor.info', { Id: response })
             })
         }
 

@@ -14,6 +14,10 @@ namespace ABCiencias.Models
 
         public int IdServico_fk { get; set; }
 
+        public decimal Valor { get; set; }
+        public float Nota { get; set; }
+        public string Descricao { get; set; }
+
         [ForeignKey("IdServico_fk")]
         public Servico Servico { get; set; }
         [ForeignKey("IdFornecedor_fk")]

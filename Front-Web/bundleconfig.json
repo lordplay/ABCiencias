@@ -20,6 +20,7 @@
     "outputFileName": "Content/JS/angularmods.js",
     "inputFiles": [
       "scripts/dirPagination.js",
+      "scripts/angular-chart.js",
       "scripts/ng-csv.js"
     ]
   },

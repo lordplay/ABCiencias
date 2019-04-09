@@ -181,6 +181,7 @@
     <Content Include="Content\bower_components\bower_components\sweetalert\themes\facebook\facebook.css" />
     <Content Include="Content\bower_components\bower_components\sweetalert\themes\google\google.css" />
     <Content Include="Content\bower_components\bower_components\sweetalert\themes\twitter\twitter.css" />
+    <Content Include="Content\Chart.css" />
     <Content Include="Content\JS\angularcore.js" />
     <Content Include="Content\JS\angularcore.min.js">
       <DependentUpon>angularcore.js</DependentUpon>
@@ -212,6 +213,8 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
+    <Content Include="scripts\angular-chart.js" />
+    <Content Include="scripts\angular-chart.min.js" />
     <Content Include="scripts\angular-cookies.js" />
     <Content Include="scripts\angular-cookies.min.js" />
     <Content Include="scripts\angular-counter-with-easing.min.js" />
@@ -225,6 +228,8 @@
     <Content Include="scripts\angular-ui-router.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\Chart.js" />
+    <Content Include="scripts\Chart.min.js" />
     <Content Include="scripts\dirPagination.js" />
     <Content Include="scripts\dirPagination.tpl.html" />
     <Content Include="scripts\jquery.easing.min.js" />

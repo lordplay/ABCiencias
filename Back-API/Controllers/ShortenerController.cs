@@ -1,4 +1,5 @@
 ﻿using ABCiencias.Models;
+using ABCiencias.Models.Relatorios;
 using ABCiencias.Models.Servicos.Shortener;
 using ABCiencias.Models.UrlShorts;
 using System;
@@ -52,6 +53,10 @@ namespace ABCiencias.Controllers
         public bool DeletarUrl([FromBody] int id)
         {
             return _service.Delete(id);
+        }
+        public IHttpActionResult GerarRelatorio([FromBody] RelatorioFilter filter)
+        {
+            return Ok(_service.GerarRelatorio(filter));
         }
     }
 }

@@ -26,15 +26,18 @@ namespace Back_UrlShortener.Controllers
         public IHttpActionResult ObterUrlToRedirect(string guid)
         {
             var ip = HttpContext.Current.Request;
-            _logService.SaveLogRequest(new LogRequest(HttpContext.Current.Request.UserHostAddress.ToString(), HttpContext.Current.Request.HttpMethod.ToString(), HttpContext.Current.Request.Url.AbsoluteUri.ToString()));
 
             if (!string.IsNullOrEmpty(guid))
             {
                 var redirectTo = _service.ObterUrlToRedirect(guid);
                 if (redirectTo != null)
+                {
+                    _logService.SaveLogRequest(new LogRequest(HttpContext.Current.Request.UserHostAddress.ToString(), HttpContext.Current.Request.HttpMethod.ToString(), redirectTo));
                     return Redirect(redirectTo.UrlToRedirect);
+                }
             }
 
+            _logService.SaveLogRequest(new LogRequest(HttpContext.Current.Request.UserHostAddress.ToString(), HttpContext.Current.Request.HttpMethod.ToString(), HttpContext.Current.Request.Url.AbsoluteUri.ToString()));
             return Redirect("http://www.abc.org.br");
         }
         [HttpGet]

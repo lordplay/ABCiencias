@@ -100,6 +100,7 @@
     <Content Include="App\Controllers\Shorteners\shortenerCadastrarController.js" />
     <Content Include="App\Controllers\Shorteners\shortenerController.js" />
     <Content Include="App\Controllers\Shorteners\shortenerEditController.js" />
+    <Content Include="App\Controllers\Shorteners\shortenerRelatorioController.js" />
     <Content Include="App\MainModule.js" />
     <Content Include="App\RouteProvider\RouteConfig.js" />
     <Content Include="App\Services\FornecedorService.js" />
@@ -184,6 +185,10 @@
     <Content Include="Content\JS\angularcore.min.js">
       <DependentUpon>angularcore.js</DependentUpon>
     </Content>
+    <Content Include="Content\JS\angularmods.js" />
+    <Content Include="Content\JS\angularmods.min.js">
+      <DependentUpon>angularmods.js</DependentUpon>
+    </Content>
     <Content Include="Content\JS\Controllers.js" />
     <Content Include="Content\JS\controllers.min.js">
       <DependentUpon>Controllers.js</DependentUpon>
@@ -214,6 +219,8 @@
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular-route.js" />
     <Content Include="scripts\angular-route.min.js" />
+    <Content Include="scripts\angular-sanitize.js" />
+    <Content Include="scripts\angular-sanitize.min.js" />
     <Content Include="scripts\angular-ui-router.js" />
     <Content Include="scripts\angular-ui-router.min.js" />
     <Content Include="scripts\angular.js" />
@@ -231,6 +238,7 @@
     <Content Include="Templates\Shortener\shorteners-cadastrar.html" />
     <Content Include="Templates\Shortener\shorteners-edit.html" />
     <Content Include="Templates\Shortener\shorteners-listagem.html" />
+    <Content Include="Templates\Shortener\shorteners-relatorio.html" />
     <Content Include="Templates\Utils\dirPagination.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -372,10 +380,11 @@
     <Content Include="Content\bower_components\bower_components\sweetalert\themes\google\google.scss" />
     <Content Include="Content\bower_components\bower_components\sweetalert\themes\twitter\twitter.scss" />
     <None Include="packages.config" />
-    <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular-cookies.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
+    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="scripts\angular-sanitize.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

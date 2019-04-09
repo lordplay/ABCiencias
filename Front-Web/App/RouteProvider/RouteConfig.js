@@ -51,6 +51,10 @@
                     url: "/cadastrar",
                     templateUrl: 'Templates/Shortener/shorteners-cadastrar.html',
                     controller: "ShortenerCadastrarController"
+                }).state('shortener.relatorio', {
+                    url: "/relatorio",
+                    templateUrl: 'Templates/Shortener/shorteners-relatorio.html',
+                    controller: "ShortenerRelatorioController"
                 })
                 .state('shortener.edit', {
                     url: "/listagem/{UrlId}",

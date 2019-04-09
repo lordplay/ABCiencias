@@ -20,6 +20,8 @@
 
     <!--Angular Core-->
     <script src="Content/JS/angularcore.min.js"></script>
+    <script src="Content/JS/angularmods.min.js"></script>
+
 
     <script src="scripts/angular-counter.min.js"></script>
 
@@ -58,9 +60,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
                 </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" ui-sref="shortener.listagem">Url Shortener</a>
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Url Shortener</a>
+                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                        <a class="dropdown-item" ui-sref="shortener.listagem">Listagem</a>
+                        <a class="dropdown-item" ui-sref="shortener.relatorio">Relatório</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Fornecedores</a>

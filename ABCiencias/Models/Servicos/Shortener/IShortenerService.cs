@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ABCiencias.Models.Relatorios;
+using System.Collections.Generic;
 
 namespace ABCiencias.Models.Servicos.Shortener
 {
@@ -11,5 +12,6 @@ namespace ABCiencias.Models.Servicos.Shortener
         URLShortener ObterNovaUrl();
         bool Delete(int id);
         URLShortener ObterUrlToRedirect(string Guid);
+        RetornoOperacao GerarRelatorio(RelatorioFilter filter);
     }
 }

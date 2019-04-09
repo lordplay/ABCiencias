@@ -13,7 +13,14 @@
       "scripts/angular-cookies.js",
       "scripts/angular-ui-router.js",
       "scripts/angular-animate.js",
-      "scripts/dirPagination.js"
+      "scripts/angular-sanitize.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/JS/angularmods.js",
+    "inputFiles": [
+      "scripts/dirPagination.js",
+      "scripts/ng-csv.js"
     ]
   },
   {

@@ -14,7 +14,8 @@
             ObterUrls: ObterUrls,
             CadastrarUrl: CadastrarUrl,
             Delete: Delete,
-            Pesquisar: Pesquisar
+            Pesquisar: Pesquisar,
+            GerarRelatorio: GerarRelatorio
         };
 
         function Pesquisar(input) {
@@ -54,6 +55,13 @@
                 return response.data;
             });
         }
+
+        function GerarRelatorio(filter) {
+            return $http({ method: 'POST', url: RequestFactory.backapiurl + 'Shortener/GerarRelatorio', data: filter }).then(function (response) {
+                return response.data;
+            });
+        }
+
         return service;
     }
 })();

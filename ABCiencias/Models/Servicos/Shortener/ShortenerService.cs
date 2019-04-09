@@ -1,4 +1,5 @@
 ﻿using ABCiencias.Entity;
+using ABCiencias.Models.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -125,6 +126,31 @@ namespace ABCiencias.Models.Servicos.Shortener
         {
             uRL.Click();
             _context.SaveChanges();
+        }
+
+        public RetornoOperacao GerarRelatorio(RelatorioFilter filter)
+        {
+            try
+            {
+                var retorno2 = from x in _context.LogRequests
+                               where (x.UrlShortener_fk.HasValue)
+                               group x by x.UrlShortener_fk into urls
+                               select new { url = urls.Key, clicks = urls.Count() };
+
+                var retorno3 = new List<RelatorioUrlShortenerDTO>();
+
+                foreach (var item in retorno2)
+                {
+                    retorno3.Add(new RelatorioUrlShortenerDTO() { Url = _context.Urls.FirstOrDefault(x => x.Id == item.url), Count = item.clicks });
+                }
+
+                return new RetornoOperacao() { Retorno = retorno3, StatusOperacao = EnumStatusOperacao.Ok };
+            }
+            catch (Exception)
+            {
+                return new RetornoOperacao() { Message = "Erro ao tentar gerar relatório", StatusOperacao = EnumStatusOperacao.Erro };
+            }
+
         }
     }
 }

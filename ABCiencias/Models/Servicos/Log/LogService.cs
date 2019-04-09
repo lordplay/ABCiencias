@@ -20,7 +20,7 @@ namespace ABCiencias.Models.Servicos.Log
         {
             _context.LogRequests.Add(request);
             _context.SaveChanges();
-        }
 
+        }
     }
 }
